@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "jekyll/_posts": [
+      "/[0-9\\-a-z]+\\.",
+      "\\.md$"
+    ],
+    "jekyll/assets": [
+      "/[0-9\\-a-z_]+\\.",
+      "\\.(webp|pdf|zip|svg)$"
+    ]
+  },
+  "ignore": [
+    "jekyll/assets/js",
+    "jekyll/assets/css",
+    "jekyll/assets/images",
+    "jekyll/assets/contributors/wechaty",
+    "tests/fixtures"
+  ]
+}
