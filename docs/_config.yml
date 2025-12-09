@@ -2,7 +2,7 @@
 name: Ship.Fail
 description: Ship.Fail - GitHub for Hackathon Ideas
 logo: assets/images/logo.png
-favicon: assets/images/favicon.ico
+favicon: assets/images/shipfail-icon.svg
 url: https://ship.fail
 baseurl:
 email: hello@ship.fail
