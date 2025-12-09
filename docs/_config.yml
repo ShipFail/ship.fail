@@ -14,10 +14,6 @@ math:
 mermaid:
   enable_by_default: false
 
-google:
-  tag_manager:
-    container_id: GTM-PD2PL84
-
 include: ["_pages"]
 permalink: /:year/:month/:day/:title/
 
