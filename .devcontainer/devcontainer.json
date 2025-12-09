@@ -18,6 +18,9 @@
 
     "ghcr.io/devcontainers/features/common-utils:2": {},
 
+    // Ruby for Jekyll toolchain
+    "ghcr.io/devcontainers/features/ruby:1": { "version": "latest" },
+
     // Node Feature (Spec v1-compliant), replaces node + npm-package
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" },
 
@@ -53,6 +56,6 @@
     "@openai/codex",
     "@github/copilot"
   ],
-  // Run after container is created and features are applied
+  // `post` means after mounting `workspace`
   "postCreateCommand": "true"
 }
