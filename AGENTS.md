@@ -37,7 +37,7 @@ Every post must have the following YAML front matter:
 title: "post_title"
 excerpt: "post_excerpt" # make it a strong hook, max 160 characters
 categories: "category_name"  # replace by best category name from existing categories
-author: "author_name" # MUST match a filename in jekyll/_contributors/ (e.g. huan.md)
+author: "author_name" # MUST match a filename in jekyll/_authors/ (e.g. huan.md)
 tags:
   - tag1
   - tag2
@@ -47,9 +47,9 @@ image: /assets/YYYY/MM-slug-slug-slug/post-teaser-image.webp
 
 - **Critical**: The `image` key is **MANDATORY**. It must point to a valid image file in your asset folder.
 - **Teaser**: The `image` is used as the teaser.
-- **Author**: The `author` field MUST match a filename in `jekyll/_contributors/` (without the `.md` extension).
-  - Example: If `jekyll/_contributors/huan.md` exists, use `author: huan`.
-  - If the author does not exist, you must create a new contributor file in `jekyll/_contributors/` first.
+- **Author**: The `author` field MUST match a filename in `jekyll/_authors/` (without the `.md` extension).
+  - Example: If `jekyll/_authors/huan.md` exists, use `author: huan`.
+  - If the author does not exist, you must create a new author file in `jekyll/_authors/` first.
 - **Mermaid**: If the post contains a mermaid code block, you MUST include `mermaid: true`.
 - **Mermaid Syntax**: Always use double quotes for text labels in Mermaid charts (e.g., `A["Label (with parens)"]`) to prevent syntax errors.
 - **Math**: If the post contains LaTeX equations (e.g., `$$`), you MUST include `mathjax: true`.

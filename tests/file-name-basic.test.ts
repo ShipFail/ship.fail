@@ -5,7 +5,7 @@ import { JEKYLL_FOLDERS, stripRepoRoot } from "../src/folders.ts";
 
 Deno.test("filenames must be lowercase with safe characters", async () => {
   const REGEX = /^[a-z0-9/_.-]+$/;
-  const WHITE_LIST_REGEX_LIST = [new RegExp("/assets/js/viewer-js", "i")];
+  const WHITE_LIST_REGEX_LIST: RegExp[] = [];
 
   const assetsFileList: string[] = [];
   for await (const entry of expandGlob(`${JEKYLL_FOLDERS.assets}/**/*`)) {

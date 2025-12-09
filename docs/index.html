@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ship.Fail — GitHub for Hackathon Ideas</title>
+  <meta name="description" content="A tiny hacker-friendly service where developers draft, share, fork, and team up on hackathon ideas — fail fast, ship faster." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Flowbite CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+  <style>
+    :root { --brand: #7c3aed; --brand-2: #22d3ee; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+    .glass { backdrop-filter: blur(8px); background: rgba(17, 24, 39, 0.55); }
+    .gradient { background: radial-gradient(1200px 600px at 10% 10%, rgba(124,58,237,.25), transparent 60%), radial-gradient(800px 400px at 90% 10%, rgba(34,211,238,.25), transparent 60%); }
+  </style>
+</head>
+<body class="bg-gray-950 text-gray-100 gradient">
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-gray-950/70 backdrop-blur border-b border-gray-800">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#home" class="flex items-center gap-2">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white font-extrabold">SF</span>
+          <span class="text-lg font-bold tracking-tight">Ship<span class="text-violet-400">.Fail</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="#home" class="hover:text-white text-gray-300">Home</a>
+          <a href="#ideas" class="hover:text-white text-gray-300">Live Ideas</a>
+          <a href="#how" class="hover:text-white text-gray-300">How it works</a>
+          <a href="#organizers" class="hover:text-white text-gray-300">For Organizers</a>
+          <a href="#faq" class="hover:text-white text-gray-300">FAQ</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#signin" class="hidden sm:inline-flex items-center gap-2 rounded-xl border border-gray-700 px-3 py-2 text-sm hover:bg-gray-800">Sign in</a>
+          <a href="#cta" class="inline-flex items-center gap-2 rounded-xl bg-violet-600 px-3 py-2 text-sm font-semibold hover:bg-violet-500">Start an Idea</a>
+          <button data-collapse-toggle="mobile-menu" type="button" class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-800 md:hidden" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <div class="md:hidden" id="mobile-menu">
+      <div class="space-y-1 px-4 pb-3 pt-2">
+        <a href="#home" class="block rounded px-3 py-2 text-base text-gray-300 hover:bg-gray-800">Home</a>
+        <a href="#ideas" class="block rounded px-3 py-2 text-base text-gray-300 hover:bg-gray-800">Live Ideas</a>
+        <a href="#how" class="block rounded px-3 py-2 text-base text-gray-300 hover:bg-gray-800">How it works</a>
+        <a href="#organizers" class="block rounded px-3 py-2 text-base text-gray-300 hover:bg-gray-800">For Organizers</a>
+        <a href="#faq" class="block rounded px-3 py-2 text-base text-gray-300 hover:bg-gray-800">FAQ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE 1: HOME -->
+  <main id="home" class="relative overflow-hidden">
+    <!-- HERO -->
+    <section class="relative isolate">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(50vw_50vw_at_50%_-10%,rgba(124,58,237,0.25),transparent),radial-gradient(30vw_30vw_at_80%_10%,rgba(34,197,94,0.15),transparent)]"></div>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span class="inline-flex items-center gap-2 rounded-full border border-violet-500/40 bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-300">Hacker‑friendly • Tiny • Open</span>
+            <h1 class="mt-4 text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">Ship.Fail — <span class="text-violet-400">GitHub for Hackathon Ideas</span></h1>
+            <p class="mt-4 text-lg text-gray-300">Draft privately. Publish publicly. Let others click <span class="font-semibold text-white">Interested</span> and form teams before a hackathon even starts. Fork ideas, iterate, and celebrate the learnings — fail fast, ship faster.</p>
+
+            <!-- WAITLIST -->
+            <div class="mt-8 rounded-2xl border border-violet-500/30 bg-violet-500/10 p-4">
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <p class="text-violet-200">Join the waitlist for early access & perks</p>
+                <a href="https://form.typeform.com/to/fiS0BZ6X" target="_blank" class="inline-flex items-center rounded-xl bg-white/10 px-4 py-2 text-sm font-semibold text-white backdrop-blur hover:bg-white/20">Join Waitlist</a>
+              </div>
+            </div>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+              <a href="#cta" class="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold hover:bg-violet-500">Start your idea</a>
+              <a href="#ideas" class="inline-flex items-center rounded-xl border border-gray-700 px-5 py-3 text-sm hover:bg-gray-800">Explore live ideas</a>
+            </div>
+            <dl class="mt-8 grid grid-cols-3 gap-4 text-center">
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-4">
+                <dt class="text-xs text-gray-400">Time to first idea</dt>
+                <dd class="text-xl font-bold">&lt; 60s</dd>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-4">
+                <dt class="text-xs text-gray-400">Click to join</dt>
+                <dd class="text-xl font-bold">Interested</dd>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-gray-900/40 p-4">
+                <dt class="text-xs text-gray-400">Login</dt>
+                <dd class="text-xl font-bold">GitHub</dd>
+              </div>
+            </dl>
+          </div>
+          <div class="rounded-3xl border border-gray-800 bg-gray-900/60 p-6 shadow-2xl">
+            <!-- Flowbite: CTA card styled as a live preview -->
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="text-sm text-gray-400">Idea preview</div>
+                <span class="rounded-full bg-emerald-500/20 px-3 py-1 text-xs text-emerald-300 border border-emerald-500/30">Ready for Hackathon</span>
+              </div>
+              <div class="rounded-2xl border border-gray-800 bg-gray-950 p-5">
+                <h3 class="text-xl font-semibold">ReMic — Talk‑While‑Listening Translator</h3>
+                <p class="mt-2 text-gray-300">Realtime two‑way duplex speech translation for in‑person conversations. Built for travelers, immigrants, and language learners.</p>
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="rounded-full bg-gray-800 px-3 py-1">webrtc</span>
+                  <span class="rounded-full bg-gray-800 px-3 py-1">azure-speech</span>
+                  <span class="rounded-full bg-gray-800 px-3 py-1">ios</span>
+                </div>
+                <div class="mt-5 flex items-center justify-between">
+                  <div class="flex -space-x-2">
+                    <img class="h-8 w-8 rounded-full border border-gray-800" src="https://avatars.githubusercontent.com/u/1361891?v=4" alt="Huan" />
+                    <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=12" alt="Teammate" />
+                  </div>
+                  <button class="inline-flex items-center rounded-lg bg-violet-600 px-4 py-2 text-sm font-medium hover:bg-violet-500">Interested</button>
+                </div>
+              </div>
+            </div>
+            <p class="mt-3 text-xs text-gray-500">Preview content for illustration. Ideas are user‑submitted and forkable.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST / SOCIAL PROOF (Flowbite logos) -->
+    <section class="border-y border-gray-800 bg-gray-900/40">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-6 items-center opacity-80 filter invert">
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" />
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/visualstudiocode.svg" alt="VS Code" />
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" alt="Discord" />
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/stackoverflow.svg" alt="StackOverflow" />
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/hackthebox.svg" alt="Hack" />
+          <img class="h-8 mx-auto" src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/openai.svg" alt="AI" />
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS (Flowbite Steps) -->
+    <section id="how" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">How it works</h2>
+        <p class="mt-3 text-gray-300">Do one thing well: idea → publish → team up. Everything else is optional.</p>
+      </div>
+      <ol class="mt-10 grid gap-6 md:grid-cols-3">
+        <li class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 font-bold">1</span>
+          <h3 class="mt-4 text-lg font-semibold">Draft privately</h3>
+          <p class="mt-2 text-gray-300">Sign in with GitHub. Add title, pitch, tags, and optional repo link.</p>
+        </li>
+        <li class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 font-bold">2</span>
+          <h3 class="mt-4 text-lg font-semibold">Publish & tag</h3>
+          <p class="mt-2 text-gray-300">Make public with one click. Mark as <em>Ready for Hackathon</em>.</p>
+        </li>
+        <li class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 font-bold">3</span>
+          <h3 class="mt-4 text-lg font-semibold">Team up fast</h3>
+          <p class="mt-2 text-gray-300">Others tap <strong>Interested</strong>, leave suggestions, or fork your idea.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- LIVE IDEAS (Flowbite cards) -->
+    <section id="ideas" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <div class="flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-bold">Live public ideas</h2>
+          <p class="mt-2 text-gray-300">Fresh ideas from real hackers. Forkable. Remixable.</p>
+        </div>
+        <a href="#cta" class="hidden md:inline-flex rounded-xl border border-gray-700 px-4 py-2 text-sm hover:bg-gray-800">Add your idea</a>
+      </div>
+
+      <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Card 1 -->
+        <article class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Ship.Fail platform MVP</h3>
+            <span class="rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs text-emerald-300 border border-emerald-500/30">Ready</span>
+          </div>
+          <p class="mt-2 text-gray-300">Idea registry with GitHub login, public toggle, and Interested button. Keep it tiny.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-gray-800 px-3 py-1">nextjs</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">supabase</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">vercel</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://avatars.githubusercontent.com/u/1361891?v=4" alt="Huan" />
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=21" alt="Dev" />
+            </div>
+            <button class="inline-flex items-center rounded-lg bg-gray-800 px-3 py-1.5 text-sm hover:bg-gray-700">Interested</button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">ReMic — Talk‑While‑Listening</h3>
+            <span class="rounded-full bg-amber-500/20 px-2.5 py-1 text-xs text-amber-300 border border-amber-500/30">Seeking</span>
+          </div>
+          <p class="mt-2 text-gray-300">Near‑real‑time duplex speech translation. iOS MVP with Azure Speech Translation.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-gray-800 px-3 py-1">ios</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">webrtc</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">azure</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=5" alt="Dev" />
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=15" alt="Dev" />
+            </div>
+            <button class="inline-flex items-center rounded-lg bg-gray-800 px-3 py-1.5 text-sm hover:bg-gray-700">Interested</button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">AI‑assisted OSS Onboarding</h3>
+            <span class="rounded-full bg-emerald-500/20 px-2.5 py-1 text-xs text-emerald-300 border border-emerald-500/30">Ready</span>
+          </div>
+          <p class="mt-2 text-gray-300">Auto‑generate first‑issue tasks, scaffolds, and PR templates for any repo.</p>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded-full bg-gray-800 px-3 py-1">typescript</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">gpt</span>
+            <span class="rounded-full bg-gray-800 px-3 py-1">cli</span>
+          </div>
+          <div class="mt-5 flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=11" alt="Dev" />
+              <img class="h-8 w-8 rounded-full border border-gray-800" src="https://i.pravatar.cc/64?img=30" alt="Dev" />
+            </div>
+            <button class="inline-flex items-center rounded-lg bg-gray-800 px-3 py-1.5 text-sm hover:bg-gray-700">Interested</button>
+          </div>
+        </article>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="#cta" class="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold hover:bg-violet-500">Submit your idea</a>
+      </div>
+    </section>
+
+    <!-- CTA BANNER (Flowbite) -->
+    <section id="cta" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid items-center gap-8 rounded-3xl border border-gray-800 bg-gray-900/60 p-8 md:grid-cols-2">
+        <div>
+          <h3 class="text-2xl font-bold">Start your first idea in under a minute</h3>
+          <p class="mt-2 text-gray-300">Free forever. GitHub login. Optional LinkedIn. You own your ideas.</p>
+          <ul class="mt-4 space-y-2 text-sm text-gray-300">
+            <li>• Private by default</li>
+            <li>• Publish when ready</li>
+            <li>• Tap <em>Interested</em> to form teams</li>
+          </ul>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#signin" class="inline-flex items-center rounded-xl bg-white/10 px-5 py-3 text-sm font-semibold backdrop-blur hover:bg-white/20">Sign in with GitHub</a>
+            <a href="#" class="inline-flex items-center rounded-xl border border-gray-700 px-5 py-3 text-sm hover:bg-gray-800">View sample ideas</a>
+          </div>
+        </div>
+        <form class="rounded-2xl border border-gray-800 bg-gray-950 p-6 space-y-4">
+          <div>
+            <label class="mb-2 block text-sm font-medium">Idea title</label>
+            <input class="w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 text-sm focus:border-violet-500 focus:ring-violet-500" placeholder="e.g., ReMic — Talk‑While‑Listening Translator" />
+          </div>
+          <div>
+            <label class="mb-2 block text-sm font-medium">Short pitch</label>
+            <textarea rows="4" class="w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 text-sm focus:border-violet-500 focus:ring-violet-500" placeholder="What is it? Who is it for? Why now?"></textarea>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label class="mb-2 block text-sm font-medium">Tags</label>
+              <input class="w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 text-sm" placeholder="webrtc, ios, ai" />
+            </div>
+            <div>
+              <label class="mb-2 block text-sm font-medium">Repo (optional)</label>
+              <input class="w-full rounded-lg border border-gray-800 bg-gray-900 p-2.5 text-sm" placeholder="https://github.com/user/repo" />
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <label class="inline-flex cursor-pointer items-center gap-2 text-sm"><input type="checkbox" class="text-violet-600 rounded border-gray-700 bg-gray-900 focus:ring-violet-500"> Public</label>
+            <button type="button" class="inline-flex items-center rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold hover:bg-violet-500">Save draft</button>
+          </div>
+          <p class="text-xs text-gray-500">This is a non‑functional form for demo. Hook up GitHub OAuth + DB in your app.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- PAGE 2: FOR ORGANIZERS / ABOUT -->
+  <section id="organizers" class="border-t border-gray-800 bg-gray-900/40">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <h2 class="text-3xl font-bold">For Hackathon Organizers</h2>
+          <p class="mt-3 text-gray-300">Use Ship.Fail to turn idea chaos into velocity. No heavy platform, no lock‑in — just a lightweight hub your hackers will love.</p>
+          <ul class="mt-6 space-y-3 text-gray-300">
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> 
+              <span><strong>Pre‑event idea seeding:</strong> participants publish and tag ideas weeks ahead, so teams self‑assemble.</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> 
+              <span><strong>Focus on building:</strong> keep Ship.Fail for ideas; continue using your favorite submission/judging tool.</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> 
+              <span><strong>Open badges:</strong> embeddable shields for repos: <code>Built on Ship.Fail</code>.</span></li>
+            <li class="flex gap-3"><span class="mt-1 h-2 w-2 rounded-full bg-emerald-400"></span> 
+              <span><strong>Zero cost, zero friction:</strong> as tiny and hacker‑friendly as <em>js.org</em>.</span></li>
+          </ul>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-semibold hover:bg-violet-500">Partner with us</a>
+            <a href="#faq" class="inline-flex items-center rounded-xl border border-gray-700 px-5 py-3 text-sm hover:bg-gray-800">Read FAQ</a>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-gray-800 bg-gray-950 p-6">
+          <h3 class="text-xl font-semibold">Example: Pre‑Event Flow</h3>
+          <ol class="mt-4 space-y-4">
+            <li class="rounded-xl border border-gray-800 bg-gray-900/60 p-4"><strong>Week −2</strong>: announce Ship.Fail link. Encourage posting/forking ideas.</li>
+            <li class="rounded-xl border border-gray-800 bg-gray-900/60 p-4"><strong>Week −1</strong>: enable <em>Ready for Hackathon</em> filter; teams form via Interested.</li>
+            <li class="rounded-xl border border-gray-800 bg-gray-900/60 p-4"><strong>Event day</strong>: kickoff; teams post final repo links; Ship.Fail badges added.</li>
+          </ol>
+          <p class="mt-4 text-sm text-gray-400">Optional: export CSV of public ideas for your schedule/Slack/Discord.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING / OPEN SOURCE ETHOS (Tiny) -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+        <h3 class="text-lg font-semibold">Free Forever</h3>
+        <p class="mt-2 text-gray-300">No paywalls. Ideal for communities and students.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+        <h3 class="text-lg font-semibold">Tiny by Design</h3>
+        <p class="mt-2 text-gray-300">Do one thing well: manage hackathon ideas. That’s it.</p>
+      </div>
+      <div class="rounded-2xl border border-gray-800 bg-gray-900/50 p-6">
+        <h3 class="text-lg font-semibold">Open & Friendly</h3>
+        <p class="mt-2 text-gray-300">GitHub login, community vibes, embeddable badges.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (Flowbite Accordion) -->
+  <section id="faq" class="border-t border-gray-800 bg-gray-900/40">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold text-center">FAQ</h2>
+      <div id="accordion-open" data-accordion="open" class="mt-8">
+        <h3 id="faq-1">
+          <button type="button" class="flex w-full items-center justify-between rounded-xl border border-gray-800 bg-gray-950 px-5 py-4 text-left text-gray-200 hover:bg-gray-900" data-accordion-target="#faq-1-body" aria-expanded="true" aria-controls="faq-1-body">
+            <span>Is Ship.Fail a hackathon platform like Devpost?</span>
+            <svg data-accordion-icon class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+          </button>
+        </h3>
+        <div id="faq-1-body" class="mt-2">
+          <div class="rounded-xl border border-gray-800 bg-gray-900/60 p-5 text-gray-300">No. Ship.Fail focuses only on ideas and lightweight team formation. Keep using your preferred submission/judging tools.</div>
+        </div>
+
+        <h3 id="faq-2" class="mt-4">
+          <button type="button" class="flex w-full items-center justify-between rounded-xl border border-gray-800 bg-gray-950 px-5 py-4 text-left text-gray-200 hover:bg-gray-900" data-accordion-target="#faq-2-body" aria-expanded="false" aria-controls="faq-2-body">
+            <span>Is it free?</span>
+            <svg data-accordion-icon class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+          </button>
+        </h3>
+        <div id="faq-2-body" class="hidden mt-2">
+          <div class="rounded-xl border border-gray-800 bg-gray-900/60 p-5 text-gray-300">Yes. Free forever. We keep it tiny like <em>js.org</em>.</div>
+        </div>
+
+        <h3 id="faq-3" class="mt-4">
+          <button type="button" class="flex w-full items-center justify-between rounded-xl border border-gray-800 bg-gray-950 px-5 py-4 text-left text-gray-200 hover:bg-gray-900" data-accordion-target="#faq-3-body" aria-expanded="false" aria-controls="faq-3-body">
+            <span>How do people join my idea?</span>
+            <svg data-accordion-icon class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+          </button>
+        </h3>
+        <div id="faq-3-body" class="hidden mt-2">
+          <div class="rounded-xl border border-gray-800 bg-gray-900/60 p-5 text-gray-300">They tap <strong>Interested</strong>. You’ll see their GitHub profile and can invite them into your team chat.</div>
+        </div>
+
+        <h3 id="faq-4" class="mt-4">
+          <button type="button" class="flex w-full items-center justify-between rounded-xl border border-gray-800 bg-gray-950 px-5 py-4 text-left text-gray-200 hover:bg-gray-900" data-accordion-target="#faq-4-body" aria-expanded="false" aria-controls="faq-4-body">
+            <span>Can people fork my idea?</span>
+            <svg data-accordion-icon class="h-5 w-5 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"/></svg>
+          </button>
+        </h3>
+        <div id="faq-4-body" class="hidden mt-2">
+          <div class="rounded-xl border border-gray-800 bg-gray-900/60 p-5 text-gray-300">Yes — by design. Ship.Fail celebrates remix culture. Attribution encouraged.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <a href="#home" class="flex items-center gap-2">
+            <span class="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white font-extrabold">SF</span>
+            <span class="text-lg font-bold tracking-tight">Ship<span class="text-violet-400">.Fail</span></span>
+          </a>
+          <p class="mt-3 text-gray-400 max-w-sm">A tiny hacker‑friendly service to draft, share, and team up on hackathon ideas. Fail fast, ship faster.</p>
+        </div>
+        <div class="text-sm text-gray-400">
+          <div class="font-semibold text-gray-200">Links</div>
+          <ul class="mt-2 space-y-1">
+            <li><a class="hover:text-white" href="#ideas">Live ideas</a></li>
+            <li><a class="hover:text-white" href="#how">How it works</a></li>
+            <li><a class="hover:text-white" href="#organizers">For organizers</a></li>
+            <li><a class="hover:text-white" href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="text-sm text-gray-400">
+          <div class="font-semibold text-gray-200">Community</div>
+          <ul class="mt-2 space-y-1">
+            <li><a class="hover:text-white" href="https://github.com/huan/hackathon-ideas" target="_blank" rel="noopener">Seed idea repo</a></li>
+            <li><a class="hover:text-white" href="#">Discord</a></li>
+            <li><a class="hover:text-white" href="#">Status</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 flex items-center justify-between border-t border-gray-800 pt-6 text-xs text-gray-500">
+        <span>© <span id="year"></span> Ship.Fail • Tiny by design</span>
+        <span>Made with ♥ for hackers</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Flowbite JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

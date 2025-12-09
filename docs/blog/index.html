@@ -7,13 +7,7 @@ excerpt: Wechaty Latest Community Blog Updates
 ---
 
 {% assign blog_posts = '' | split: ',' %}
-{% for post in site.posts %}
-  {% unless post.tags contains 'news' %}
-      {% unless post.hidden %}
-             {% assign blog_posts = blog_posts | push: post %}
-         {% endunless %}
-  {% endunless %}
-{% endfor %}
+{% assign blog_posts = site.posts %}
 
 
 <div class="container">
@@ -180,11 +174,7 @@ excerpt: Wechaty Latest Community Blog Updates
           <h4 class="font-weight-bold spanborder"><span>All Blogs</span></h4>
 
 
-                                {% for post in paginator.posts %}
-
-                                        {% if post.hidden %}
-                                {% continue %}
-                            {% endif %}
+                    {% for post in paginator.posts %}
 
               {% include main-loop-card-post.html %}
 

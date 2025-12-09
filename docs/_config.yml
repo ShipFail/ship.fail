@@ -1,11 +1,11 @@
 # Site
-name: Wechaty
-description: Conversational RPA SDK for Chatbot Makers
+name: Ship.Fail
+description: Ship.Fail - GitHub for Hackathon Ideas
 logo: assets/images/logo.png
 favicon: assets/images/favicon.ico
-url: https://wechaty.js.org
+url: https://ship.fail
 baseurl:
-email: wechaty@googlegroups.com
+email: hello@ship.fail
 mailchimp-list: https://zixia.us4.list-manage.com/subscribe/post?u=a8584b55dea5aa8bbc14bd1a0&amp;id=d9899f0d70
 
 math:
@@ -34,7 +34,7 @@ defaults:
       layout: post
       comments: true
       author: wechaty
-      avatar: /assets/contributors/wechaty/icon.webp
+      avatar: /assets/authors/wechaty/icon.webp
 
   # all pages
   - scope:
@@ -42,9 +42,9 @@ defaults:
     values:
       layout: page
   - scope:
-      path: _contributors
+      path: _authors
     values:
-      layout: contributor
+      layout: author
       comments: true
       search: false
 
@@ -66,6 +66,6 @@ exclude:
   - node_modules
 
 collections:
-  contributors:
+  authors:
     output: true
     permalink: /:collection/:path/

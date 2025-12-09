@@ -1,17 +1,7 @@
 <div class="sticky-top sticky-top-offset">
     <h4 class="font-weight-bold spanborder"><span>Featured</span></h4>
     <ol class="list-featured">
-        {% for post in site.tags.featured %}
-
-        {% if post.hidden == true %}{% continue %}{% endif %}
-
-        {% if post.tags contains 'news' %}
-              <!-- in home page, we only display posts with tag `home` -->
-              {% unless news %}{% continue %}{% endunless %}
-            {% else %}
-              <!-- in news page, we only display posts without tag `news` -->
-              {% if news %}{% continue %}{% endif %}
-            {% endif %}
+                {% for post in site.tags.featured %}
 
             <li class="mb-4">
             <span>

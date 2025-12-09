@@ -10,7 +10,7 @@ layout: default
     <div class="col-md-12">
       <!-- Startup Start -->
       {% assign people_startups = '' | split: ',' %}
-      {% for portfolio in site.contributors %}
+      {% for portfolio in site.authors %}
         {% if portfolio.people contains page.slug %}
           {% assign people_startups = people_startups | push: portfolio %}
         {% endif %}
@@ -32,7 +32,7 @@ layout: default
 
       <!-- Portfolio Start -->
       {% assign people_portfolios = '' | split: ',' %}
-      {% for portfolio in site.contributors %}
+      {% for portfolio in site.authors %}
         {% if portfolio.ventures contains page.slug %}
           {% assign people_portfolios = people_portfolios | push: portfolio %}
         {% endif %}
@@ -100,7 +100,7 @@ layout: default
 
 
       <!-- Posts Start -->
-      {% assign posts = site.posts | where:"author", page.slug | where_exp: "p", "p.hidden != true" %}
+      {% assign posts = site.posts | where:"author", page.slug %}
       {% assign posts_size = posts | size %}
       {% if posts_size > 0 %}
         <h4 class="font-weight-bold spanborder"><span>Posts by {{page.name}}</span></h4>

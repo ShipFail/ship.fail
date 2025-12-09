@@ -1,8 +1,7 @@
 import { assert } from "jsr:@std/assert@0.224.0";
 import { expandGlob } from "jsr:@std/fs@0.224.0";
-import { basename } from "jsr:@std/path@0.224.0";
 
-import { contributorFilenameToUsername } from "../src/contributor-filename-to-username.ts";
+import { authorFilenameToUsername } from "../src/author-filename-to-username.ts";
 import { getChangedFileList } from "../src/get-changed-file-list.ts";
 import { getFrontmatterAuthor } from "../src/get-frontmatter-author.ts";
 import { getFrontmatterAvatarList } from "../src/get-frontmatter-avatar-list.ts";
@@ -36,31 +35,30 @@ Deno.test("front matter author must exist and map to _authors", async () => {
 
 Deno.test("author profile filename must match [a-z0-9_.-]+.md", async () => {
   const REGEX = /^[a-z0-9_.-]+\.md$/;
-  const contributorsFileList: string[] = [];
+  const authorsFileList: string[] = [];
   for await (const entry of expandGlob(`${JEKYLL_FOLDERS.authors}/*.md`)) {
-    if (entry.isFile) contributorsFileList.push(entry.path);
+    if (entry.isFile) authorsFileList.push(entry.path);
   }
 
-  for (const filename of contributorsFileList.map(stripRepoRoot)) {
-    const name = basename(filename);
-    assert(REGEX.test(name), `${name} should match ${REGEX}`);
+  for (const filename of authorsFileList.map(stripRepoRoot)) {
+    assert(REGEX.test(filename), `${filename} should match ${REGEX}`);
   }
 });
 
-Deno.test("author avatar should be stored under assets/contributors/{user}", async () => {
-  const contributorsFileList: string[] = [];
+Deno.test("author avatar should be stored under assets/authors/{user}", async () => {
+  const authorsFileList: string[] = [];
   for await (const entry of expandGlob(`${JEKYLL_FOLDERS.authors}/*.md`)) {
-    if (entry.isFile) contributorsFileList.push(entry.path);
+    if (entry.isFile) authorsFileList.push(entry.path);
   }
 
-  for (const file of contributorsFileList) {
+  for (const file of authorsFileList) {
     const avatarList = getFrontmatterAvatarList(file);
     assert(avatarList.length === 1, `${stripRepoRoot(file)} should have one avatar`);
 
     const avatar = avatarList[0]!;
     assert(avatar.startsWith("/"), `${avatar} should start with '/'`);
 
-    const userName = contributorFilenameToUsername(file);
+    const userName = authorFilenameToUsername(file);
     const pattern = new RegExp(`/authors/${userName}/`);
     assert(pattern.test(avatar), `avatar ${avatar} must be saved to assets/authors/${userName}`);
 
@@ -76,7 +74,7 @@ Deno.test("author profile name should be a valid GitHub username (recent changes
   const changedFileList = await getChangedFileList({ since: "1 week ago" });
   const changedAuthors = changedFileList.filter((file) => file.startsWith("docs/_authors/"));
 
-  const urlList = changedAuthors.map(contributorFilenameToUsername).map((name) => `https://github.com/${name}`);
+  const urlList = changedAuthors.map(authorFilenameToUsername).map((name) => `https://github.com/${name}`);
 
   for (const url of urlList) {
     const exists = await isUrlExist(url);
