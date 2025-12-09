@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "test": "deno test --allow-all"
+  },
+  "fmt": {
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "useTabs": false
+  },
+  "lint": {
+    "rules": {
+      "tags": ["recommended"]
+    }
+  }
+}
