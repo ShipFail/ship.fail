@@ -9,8 +9,6 @@ const URL_WHITE_LIST_REGEX = [
   /img\.shields\.io/i,
   /pepy\.tech\/badge/i,
   /sourcerer\.io/i,
-  /wechaty\.github\.io/i,
-  /wechaty\.js\.org/i,
 ];
 
 const isWhiteListedRemoteUrl = (url: string) =>

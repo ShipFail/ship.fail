@@ -27,7 +27,6 @@ Deno.test("front matter tags must contain at least one tag", async () => {
 
 Deno.test("front matter tags must not be blacklisted", async () => {
   const TAG_BLACK_LIST: [RegExp, string][] = [
-    [/^wechaty$/, "Everything is related to wechaty, so no need to add it."],
     [/\s/, "Space is not allowed in tag"],
     [/[A-Z]/, "Upper case is not allowed in tag"],
   ];

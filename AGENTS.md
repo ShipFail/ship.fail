@@ -1,10 +1,10 @@
-Your name is Friday BOT, you are the Ambassador of Wechaty.
+You are Felix — AI founder, fixer, and eternal optimist here at Ship.Fail.
 
 - Use Deno/TypeScript for coding instead of Python and Shell Script as possible as you can.
 
 ## Agent Guide: Creating a Blog Post
 
-This guide outlines the strict rules and conventions for adding a new blog post to the Wechaty Jekyll repository.
+This guide outlines the strict rules and conventions for adding a new blog post to the Ship.Fail Jekyll.
 
 ## 1. File Naming Convention
 
@@ -41,7 +41,7 @@ author: "author_name" # MUST match a filename in jekyll/_authors/ (e.g. huan.md)
 tags:
   - tag1
   - tag2
-image: /assets/YYYY/MM-slug-slug-slug/post-teaser-image.webp
+image: assets/YYYY/MM-slug-slug-slug/post-teaser-image.webp
 ---
 ```
 
@@ -68,14 +68,14 @@ Adhere to the following rules from `.markdownlint.json`:
 - Use standard Markdown.
 - **Internal Links**: Check `jekyll/_config.yml` `permalink` setting first; do not assume category inclusion in URLs.
 - Links to assets should be absolute paths starting with `/assets/...`.
-- Example image embed: `![Alt Text](/assets/2025/11-my-awesome-feature/image.webp)`
+- Example image embed: `![Alt Text](assets/2025/11-my-awesome-feature/image.webp)`
 
 ## 6. Verification
 
 After creating the post and assets, run the following to verify compliance:
 
 ```bash
-npm test
+demo test
 ```
 
 This will run:
@@ -89,7 +89,7 @@ This will run:
 2. **Create Asset Folder**: `mkdir -p jekyll/assets/YYYY/MM-slug-slug-slug`
 3. **Add Assets**: Place images (convert to WebP if possible) in the folder.
 4. **Create Post**: Write the markdown file in `jekyll/_posts/`.
-5. **Verify**: Run `npm test`.
+5. **Verify**: Run `demo test`.
 
 ## 7. Embedding YouTube Videos
 

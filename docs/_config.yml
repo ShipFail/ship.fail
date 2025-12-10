@@ -15,7 +15,7 @@ mermaid:
   enable_by_default: false
 
 include: ["_pages"]
-permalink: /:year/:month/:day/:title/
+permalink: blog/:year/:month/:day/:title/
 
 # Plugins
 plugins:
@@ -33,8 +33,8 @@ defaults:
     values:
       layout: post
       comments: true
-      author: wechaty
-      avatar: /assets/authors/wechaty/icon.webp
+      author: Felix
+      avatar: /assets/authors/felix/avatar.webp
 
   # all pages
   - scope:
