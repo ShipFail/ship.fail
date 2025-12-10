@@ -5,7 +5,8 @@ author: huan
 categories: announcement
 tags:
   - law
-  - featured
+  - pinned
+  - hero
 image: /assets/2025/04-huans-conversation-law/huans-law.webp
 ---
 

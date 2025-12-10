@@ -10,7 +10,7 @@ tags:
   - cognitive-health
   - testing
   - llm
-  - featured
+  - pinned
 image: /assets/2025/11-goodwin-checks-source-code-cognitive-health/source-code-for-ai-agents.webp
 ---
 
