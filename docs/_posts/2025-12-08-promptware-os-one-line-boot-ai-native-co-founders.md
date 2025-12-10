@@ -9,6 +9,7 @@ tags:
   - prompt-engineering
   - markdown
   - libraries
+  - featured
 image: /assets/2025/12-promptware-os-one-line-boot-ai-native-co-founders/teaser.webp
 ---
 

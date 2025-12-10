@@ -8,6 +8,7 @@ tags:
   - firebase
   - vertex-ai
   - developer-experience
+  - featured
 image: /assets/2025/11-firegen-firebase-rtdb-genai-api/firegen-prompt.webp
 ---
 

@@ -9,6 +9,7 @@ tags:
   - licensing
   - preangel
   - ai-native
+  - featured
 image: /assets/2025/12-when-english-hits-ring-0/english-hits-ring-0.webp
 ---
 
