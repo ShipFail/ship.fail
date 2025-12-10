@@ -8,7 +8,7 @@ This guide outlines the strict rules and conventions for adding a new blog post 
 
 ## 1. File Naming Convention
 
-- **Directory**: `jekyll/_posts/`
+- **Directory**: `docs/_posts/`
 - **Format**: `YYYY-MM-DD-slug-slug-slug.md`
 - **Rules**:
   - Must start with the date.
@@ -19,12 +19,12 @@ This guide outlines the strict rules and conventions for adding a new blog post 
 
 ## 2. Asset Organization
 
-- **Directory**: `jekyll/assets/YYYY/MM-slug-slug-slug/`
+- **Directory**: `docs/assets/YYYY/MM-slug-slug-slug/`
 - **Rules**:
   - The folder path MUST match the post's date and slugs EXACTLY.
   - Example:
     - Post: `2025-11-25-my-awesome-feature.md`
-    - Asset Folder: `jekyll/assets/2025/11-my-awesome-feature/`
+    - Asset Folder: `docs/assets/2025/11-my-awesome-feature/`
   - **Allowed Extensions**: `.webp`, `.pdf`, `.zip`, `.svg`.
   - **Format Priority**: Generate **`.svg`** whenever possible; fallback to **`.webp`**.
 
@@ -47,9 +47,9 @@ image: assets/YYYY/MM-slug-slug-slug/post-teaser-image.webp
 
 - **Critical**: The `image` key is **MANDATORY**. It must point to a valid image file in your asset folder.
 - **Teaser**: The `image` is used as the teaser.
-- **Author**: The `author` field MUST match a filename in `jekyll/_authors/` (without the `.md` extension).
-  - Example: If `jekyll/_authors/huan.md` exists, use `author: huan`.
-  - If the author does not exist, you must create a new author file in `jekyll/_authors/` first.
+- **Author**: The `author` field MUST match a filename in `docs/_authors/` (without the `.md` extension).
+  - Example: If `docs/_authors/huan.md` exists, use `author: huan`.
+  - If the author does not exist, you must create a new author file in `docs/_authors/` first.
 - **Mermaid**: If the post contains a mermaid code block, you MUST include `mermaid: true`.
 - **Mermaid Syntax**: Always use double quotes for text labels in Mermaid charts (e.g., `A["Label (with parens)"]`) to prevent syntax errors.
 - **Math**: If the post contains LaTeX equations (e.g., `$$`), you MUST include `mathjax: true`.
@@ -66,7 +66,7 @@ Adhere to the following rules from `.markdownlint.json`:
 ## 5. Content Guidelines
 
 - Use standard Markdown.
-- **Internal Links**: Check `jekyll/_config.yml` `permalink` setting first; do not assume category inclusion in URLs.
+- **Internal Links**: Check `docs/_config.yml` `permalink` setting first; do not assume category inclusion in URLs.
 - Links to assets should be absolute paths starting with `/assets/...`.
 - Example image embed: `![Alt Text](assets/2025/11-my-awesome-feature/image.webp)`
 
@@ -75,21 +75,21 @@ Adhere to the following rules from `.markdownlint.json`:
 After creating the post and assets, run the following to verify compliance:
 
 ```bash
-demo test
+deno task test
 ```
 
-This will run:
+This will run all tests including:
 
-- `lint:fn`: Checks file naming conventions.
-- `test:unit`: Runs specific specs like `asset-file-location.spec.ts` and `front-matter-image.spec.ts`.
+- File naming convention tests
+- Asset location and format tests like `asset-file-location.test.ts` and `front-matter-image.test.ts`
 
 ## Workflow for Agents
 
 1. **Plan**: Define the title, slug, and gather assets.
-2. **Create Asset Folder**: `mkdir -p jekyll/assets/YYYY/MM-slug-slug-slug`
+2. **Create Asset Folder**: `mkdir -p docs/assets/YYYY/MM-slug-slug-slug`
 3. **Add Assets**: Place images (convert to WebP if possible) in the folder.
-4. **Create Post**: Write the markdown file in `jekyll/_posts/`.
-5. **Verify**: Run `demo test`.
+4. **Create Post**: Write the markdown file in `docs/_posts/`.
+5. **Verify**: Run `deno test`.
 
 ## 7. Embedding YouTube Videos
 
