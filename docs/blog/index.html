@@ -26,7 +26,7 @@ excerpt: Ship.Fail Latest Blog Posts
       <div class="col-md-6">
       <div class="card border-0 mb-4 box-shadow">
       <a href="{{site.baseurl}}{{latest_post.url}}">
-      <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{ latest_post.image | absolute_url }}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
+      <div class="topfirstimage" style="background-image: url({% if latest_post.image contains "://" %}{{ latest_post.image }}{% else %} {{ latest_post.image | relative_url }}{% endif %}); height: 200px;    background-size: cover;    background-repeat: no-repeat;"></div>
       </a>
       <div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
       <h2 class="h4 font-weight-bold">
@@ -53,86 +53,32 @@ excerpt: Ship.Fail Latest Blog Posts
 
       <div class="col-md-6">
 
-          <!-- second latest post -->
-          {%- assign second_post = blog_posts[1] -%}
+          {% for post in blog_posts limit:3 offset:1 %}
           <div class="mb-3 d-flex align-items-center">
-                  {% if second_post.image %}
+                  {% if post.image %}
                   <div class="col-md-4">
-                  <a href="{{site.baseurl}}{{second_post.url}}">
-                   <img class="w-100" src="{% if second_post.image contains "://" %}{{ second_post.image }}{% else %}{{ second_post.image | absolute_url }}{% endif %}" alt="{{ second_post.title }}">
+                  <a href="{{site.baseurl}}{{post.url}}">
+                   <img class="w-100" src="{% if post.image contains "://" %}{{ post.image }}{% else %}{{ post.image | relative_url }}{% endif %}" alt="{{ post.title }}">
                   </a>
                   </div>
                   {% endif %}
                   <div>
                       <h2 class="mb-2 h6 font-weight-bold">
-                      <a class="text-dark" href="{{site.baseurl}}{{second_post.url}}">{{ second_post.title }}</a>
+                      <a class="text-dark" href="{{site.baseurl}}{{post.url}}">{{ post.title }}</a>
                       </h2>
                       <small class="d-block text-muted">
                           In <span class="catlist">
-                          {% for category in second_post.categories %}
+                          {% for category in post.categories %}
                           <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
                           {% endfor %}
                           </span>
                       </small>
                       <small class="text-muted">
-                          {{ second_post.date | date: '%b %d, %Y' }}
+                          {{ post.date | date: '%b %d, %Y' }}
                       </small>
                   </div>
               </div>
-
-          <!-- third latest post -->
-          {%- assign third_post = blog_posts[2] -%}
-          <div class="mb-3 d-flex align-items-center">
-                  {% if third_post.image %}
-                  <div class="col-md-4">
-                  <a href="{{site.baseurl}}{{third_post.url}}">
-                   <img class="w-100" src="{% if third_post.image contains "://" %}{{ third_post.image }}{% else %}{{ third_post.image | absolute_url }}{% endif %}" alt="{{ third_post.title }}">
-                  </a>
-                  </div>
-                  {% endif %}
-                  <div>
-                      <h2 class="mb-2 h6 font-weight-bold">
-                      <a class="text-dark" href="{{site.baseurl}}{{third_post.url}}">{{ third_post.title }}</a>
-                      </h2>
-                      <small class="d-block text-muted">
-                          In <span class="catlist">
-                          {% for category in third_post.categories %}
-                          <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                          {% endfor %}
-                          </span>
-                      </small>
-                      <small class="text-muted">
-                          {{ third_post.date | date: '%b %d, %Y' }}
-                      </small>
-                  </div>
-              </div>
-
-          <!-- fourth latest post -->
-          {%- assign fourth_post = blog_posts[3] -%}
-          <div class="mb-3 d-flex align-items-center">
-                  {% if fourth_post.image %}
-                  <div class="col-md-4">
-                  <a href="{{site.baseurl}}{{fourth_post.url}}">
-                  <img class="w-100" src="{% if fourth_post.image contains "://" %}{{ fourth_post.image }}{% else %}{{ fourth_post.image | absolute_url }}{% endif %}" alt="{{ fourth_post.title }}">
-                  </a>
-                  </div>
-                  {% endif %}
-                  <div>
-                      <h2 class="mb-2 h6 font-weight-bold">
-                      <a class="text-dark" href="{{site.baseurl}}{{fourth_post.url}}">{{ fourth_post.title }}</a>
-                      </h2>
-                      <small class="d-block text-muted">
-                          In <span class="catlist">
-                          {% for category in fourth_post.categories %}
-                          <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/categories.html#{{ category | downcase }}">{{ category }}</a><span class="sep">, </span>
-                          {% endfor %}
-                          </span>
-                      </small>
-                      <small class="text-muted">
-                          {{ fourth_post.date | date: '%b %d, %Y' }}
-                      </small>
-                  </div>
-              </div>
+          {% endfor %}
 
       </div>
 
@@ -151,7 +97,7 @@ excerpt: Ship.Fail Latest Blog Posts
                   </p>
                   <a href="{{site.baseurl}}{{post.url}}" class="btn btn-dark">Read More</a>
               </div>
-              <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{ post.image | absolute_url }});">
+              <div class="col-md-6 d-none d-md-block pr-0" style="background-size:cover;background-image:url({{ post.image | relative_url }});">
               </div>
           </div>
       </div>
@@ -175,6 +121,10 @@ excerpt: Ship.Fail Latest Blog Posts
 
 
                     {% for post in paginator.posts %}
+
+              {% if paginator.page == 1 and forloop.index <= 4 %}
+                {% continue %}
+              {% endif %}
 
               {% include main-loop-card-post.html %}
 
