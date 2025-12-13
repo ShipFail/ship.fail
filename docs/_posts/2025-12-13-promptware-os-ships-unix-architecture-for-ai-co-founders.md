@@ -10,7 +10,7 @@ tags:
   - unix
   - microkernel
   - pinned
-image: /assets/2025/12-introducing-promptware-os-operating-system-for-ai-co-founder/promptware-os-teaser.webp
+image: /assets/2025/12-promptware-os-ships-unix-architecture-for-ai-co-founders/promptware-os-teaser.webp
 ---
 
 > Stop copy-pasting prompts. Start booting an OS.
@@ -94,7 +94,7 @@ For the **Researcher**:
 *   **Structured Context**: Treat the context window like memory. Load and unload libraries dynamically to save tokens.
 *   **Reproducibility**: Share a boot config, and anyone can replicate your agent's exact state.
 
-![chaos-to-promptware](/assets/2025/12-introducing-promptware-os-operating-system-for-ai-co-founder/from-chaos-to-promptware-os.webp)
+![chaos-to-promptware](/assets/2025/12-promptware-os-ships-unix-architecture-for-ai-co-founders/from-chaos-to-promptware-os.webp)
 
 ---
 
