@@ -30,9 +30,9 @@ But when we looked at the existing options, they didn't fit:
 
 *   **MIT** is great, but it doesn't define what "source" means for an agent.
 *   **AGPL** is powerful, but ambiguous. If you talk to my agent over an API, do I have to send you the Python wrapper or the System Prompt?
-*   **SSPL** tries to solve the cloud gap, but it claims the entire "Service Stack" (OS, hardware, backups), which makes it toxic for many developers and unacceptable to the Open Source Initiative (OSI).
+*   **SSPL** pioneered solving the cloud gap with bold scope—claiming the entire "Service Stack" to ensure complete freedom. While we deeply respect this approach, its rejection by the Open Source Initiative (OSI) limits adoption in some ecosystems we want to serve.
 
-We needed something that protected the **soul** of the agent (the prompts) without overreaching into the **body** (the infrastructure).
+We needed something that protected the **soul** of the agent (the prompts) while being pragmatic about OSI approval and ecosystem adoption.
 
 ## Enter PPL v0.1
 
@@ -51,7 +51,7 @@ The heart of PPL is a rigorous definition of **[Prompt Source](https://github.co
 
 Crucially, it explicitly **excludes** the underlying inference engine (vLLM, Ollama), the OS, and the hardware.
 
-This is our **Infrastructure Exclusion**. Unlike SSPL, we are not trying to tax the cloud provider. We simply want to ensure that the *cognitive logic*—the part that makes the agent unique—remains free.
+This is our **Infrastructure Exclusion**. SSPL took the maximalist approach—ensuring complete freedom by requiring disclosure of the entire service stack. PPL takes a surgical approach: we protect the *cognitive logic* (the prompts) while being pragmatic about OSI approval. Both philosophies have merit; we chose the path that balances idealism with ecosystem adoption.
 
 ### The Three Variants
 
@@ -62,6 +62,17 @@ We created a family of three licenses to match the software ecosystem:
 3.  **PPL-S (Service-style):** For the commons. If you run this agent as a service, you must share the prompts. This ensures that the *knowledge* embedded in our agents remains open.
 
 ![License for English](/assets/2025/12-shipping-public-prompt-license-ppl/license-for-english.webp)
+
+## Why Not SSPL?
+
+We considered SSPL carefully. MongoDB's Server Side Public License embodies an important open-source principle—preventing cloud giants from freeloading on the commons without contributing back.
+
+But we chose a different path for two reasons:
+
+1.  **OSI Approval**: We want PPL to be recognized as OSI-approved open source, which means working within their definition, even if we don't entirely agree with all aspects of it.
+2.  **Scope Precision**: For AI agents, we need a definition that's surgically precise about what "Prompt Source" means. SSPL's broad "Service Stack" definition works for databases; we needed something tailored for cognitive systems.
+
+This doesn't mean SSPL is wrong. It means we're optimizing for different constraints.
 
 ## An Invitation to Pilot
 
