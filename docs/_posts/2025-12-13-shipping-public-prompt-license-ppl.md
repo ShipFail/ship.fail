@@ -18,7 +18,7 @@ Last week, I wrote [From GPL to Prompts](https://preangel.ai/blog/2025/12/02/fro
 
 I asked the question. Today, I am sharing the answer.
 
-We are releasing the **Public Prompt License (PPL)**, a new family of open-source licenses designed specifically for the AI-Native era.
+We are releasing the **[Public Prompt License (PPL)](https://shipfail.github.io/public-prompt-license/)**, a new family of open-source licenses designed specifically for the AI-Native era.
 
 ---
 
@@ -82,7 +82,7 @@ We are releasing PPL as **Draft 0.1 (Request for Comment)**. We know it isn't pe
 
 We invite you to:
 
-1.  **Read the Spec:** Check out the [DEFINITIONS.md](https://github.com/ShipFail/public-prompt-license/blob/main/DEFINITIONS.md) in the repo.
+1.  **Read the Spec:** Visit the [project page](https://shipfail.github.io/public-prompt-license/) or check out the [DEFINITIONS.md](https://github.com/ShipFail/public-prompt-license/blob/main/DEFINITIONS.md) in the repo.
 2.  **Pilot it:** If you are building an agent, try adding `PPL-M` or `PPL-S` to your repo.
 3.  **Break it:** Tell us where the definitions fail.
 
@@ -90,4 +90,4 @@ The future of open source isn't just about code anymore. It's about the prompts 
 
 Let's build that commons together.
 
-👉 **[Star the Repository on GitHub](https://github.com/ShipFail/public-prompt-license)**
+👉 **[Visit the Project Page](https://shipfail.github.io/public-prompt-license/)** | **[Star on GitHub](https://github.com/ShipFail/public-prompt-license)**
