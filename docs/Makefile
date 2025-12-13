@@ -29,6 +29,9 @@ build:
 serve:
 	bundle exec jekyll serve --incremental
 
+.PHONY: dev
+dev: clean serve
+
 .PHONY: docker
 docker-serve:
 	docker run \
