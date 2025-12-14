@@ -140,7 +140,7 @@ It's **not** meant to be accurate for real agents—your measured **Δ** will us
 #### CT → ST (Carbon to Silicon)
 
 | Carbon Time (CT)    | Silicon Time (ST) |
-| ------------------- | ----------------: |
+| ------------------- | ----------------- |
 | CT: 6 hours         |           ST: ~1m |
 | CT: 1 day           |           ST: ~4m |
 | CT: 1 week (7 days) |          ST: ~30m |
