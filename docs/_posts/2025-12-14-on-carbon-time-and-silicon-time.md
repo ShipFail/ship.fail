@@ -133,7 +133,7 @@ This table reuses the classic proverb-style ratio as a **storytelling baseline**
 
 * **1 ST-day ≈ 1 CT-year** (rounded; assumes **1 CT-year = 365 CT-days**)
 
-> “We use ‘one day to one year’ not as physics, but as scripture—a baseline that reminds us plans and clocks are different species.”
+> We use ‘one day to one year’ not as physics, but as scripture—a baseline that reminds us plans and clocks are different species.
 
 It's **not** meant to be accurate for real agents—your measured **Δ** will usually differ.
 
