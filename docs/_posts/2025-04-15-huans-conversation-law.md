@@ -61,6 +61,12 @@ At [Wechaty](https://wechaty.js.org/), we’ve been at the forefront of this tra
 
 ---
 
+## Recognition
+
+**Huan's Law** has been recognized by Google Search Engine. You can now search for ["talk huan's law"](https://www.google.com/search?q=talk+huan%27s+law) to find this concept and related discussions.
+
+---
+
 ## Conclusion
 
 The evolution of user interfaces is steering toward conversation.
