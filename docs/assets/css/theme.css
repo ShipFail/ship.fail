@@ -2,10 +2,49 @@
  * Mundana Jekyll Theme (https://www.wowthemes.net/mundana-jekyll-theme/)
  */
 
+/* Custom Ship.Fail branding styles */
 body {
+	font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !important;
 	overflow-x:hidden;
 	padding-top:69.75px;
 }
+
+.navbar-brand {
+	font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+}
+
+.sf-logo-badge {
+	width: 32px;
+	height: 32px;
+	background-color: #7c3aed;
+	color: white;
+	font-weight: 800;
+	font-size: 14px;
+}
+
+.sf-logo-badge-small {
+	width: 28px;
+	height: 28px;
+	background-color: #7c3aed;
+	color: white;
+	font-weight: 800;
+	font-size: 12px;
+}
+
+.sf-logo-text {
+	font-weight: 700;
+	letter-spacing: -0.025em;
+}
+
+.sf-logo-text .fail {
+	color: #7c3aed;
+}
+
+.sf-brand-link {
+	gap: 0.5rem;
+	letter-spacing: -0.025em;
+}
+
 .site-content {
 	margin-top:30px;
 	min-height:400px;

@@ -22,8 +22,10 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://s3.pstatp.com/cdn/expire-1-M/font-awesome/5.3.1/css/all.css" crossorigin="anonymous">
 
-    <!-- Google Fonts in China Thanks @crossly @sidny -->
-    <link href="https://fonts.loli.net/css?family=Lora" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap Modified -->
     <link rel="stylesheet" href="{{site.baseurl}}/assets/css/main.css">
@@ -48,7 +50,10 @@
     <!-- Navbar -->
     <nav id="MagicMenu" class="topnav navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ site.baseurl }}/"><strong>{{site.name}}</strong></a>
+        <a class="navbar-brand d-flex align-items-center sf-brand-link" href="{{ site.baseurl }}/">
+            <span class="d-inline-flex align-items-center justify-content-center rounded sf-logo-badge">SF</span>
+            <span class="sf-logo-text"><strong>Ship</strong><span class="fail">.Fail</span></span>
+        </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -88,8 +93,9 @@
         <div class="container">
         <div class="row align-items-center justify-content-between">
             <div>
-                <a href="#" class="text-muted navbar-brand mr-2 mb-0">
-                  <strong>Ship.Fail</strong>
+                <a href="#" class="text-muted navbar-brand mr-2 mb-0 d-inline-flex align-items-center sf-brand-link">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded sf-logo-badge-small">SF</span>
+                  <span class="sf-logo-text"><strong>Ship</strong><span class="fail">.Fail</span></span>
                 </a>
                 <span>Copyright © <script>document.write(new Date().getFullYear())</script></span>
                 |
