@@ -133,28 +133,19 @@ This table reuses the classic proverb-style ratio as a **storytelling baseline**
 
 * **1 ST-day ≈ 1 CT-year** (rounded; assumes **1 CT-year = 365 CT-days**)
 
+> “We use ‘one day to one year’ not as physics, but as scripture—a baseline that reminds us plans and clocks are different species.”
+
 It's **not** meant to be accurate for real agents—your measured **Δ** will usually differ.
 
 #### CT → ST (Carbon to Silicon)
 
-| Carbon Time (CT) | Silicon Time (ST) |
-| ---------------- | ----------------: |
-| CT: 1d           |           ST: ~4m |
-| CT: 1w (7d)      |          ST: ~28m |
-| CT: 1mo (30d)    |           ST: ~2h |
-| CT: 1y (365d)    |            ST: 1d |
-| CT: 10y          |           ST: 10d |
-| CT: 100y         |          ST: 100d |
-
-#### ST → CT (Silicon to Carbon)
-
-| Silicon Time (ST) | Carbon Time (CT) |
-| ----------------- | ---------------: |
-| ST: 1m            |        CT: ~6h5m |
-| ST: 1h            |         CT: ~15d |
-| ST: 1d            |           CT: 1y |
-| ST: 10d           |          CT: 10y |
-| ST: 100d          |         CT: 100y |
+| Carbon Time (CT)    | Silicon Time (ST) |
+| ------------------- | ----------------: |
+| CT: 6 hours         |           ST: ~1m |
+| CT: 1 day           |           ST: ~4m |
+| CT: 1 week (7 days) |          ST: ~30m |
+| CT: 2 weeks         |           ST: ~1h |
+| CT: 1 month         |           ST: ~2h |
 
 ---
 
