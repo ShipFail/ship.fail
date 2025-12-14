@@ -9,7 +9,7 @@ tags:
   - specifications
   - clock-bridge
 image: /assets/2025/12-on-carbon-time-and-silicon-time/two-week-30-minutes.webp
-mathjax: true
+math: true
 ---
 
 > 🕰️In the beginning, there was the Clock.  
