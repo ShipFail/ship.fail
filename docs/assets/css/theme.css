@@ -11,6 +11,9 @@ body {
 
 .navbar-brand {
 	font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+	margin-right: 0 !important;
+	font-size: 1.125rem !important; /* Match landing page text-lg */
+	line-height: 1.75rem !important;
 }
 
 .sf-logo-badge {
@@ -20,6 +23,7 @@ body {
 	color: white;
 	font-weight: 800;
 	font-size: 14px;
+	border-radius: 0.5rem; /* Match landing page rounded-lg */
 }
 
 .sf-logo-badge-small {
@@ -29,11 +33,14 @@ body {
 	color: white;
 	font-weight: 800;
 	font-size: 12px;
+	border-radius: 0.5rem; /* Match landing page rounded-lg */
 }
 
 .sf-logo-text {
 	font-weight: 700;
 	letter-spacing: -0.025em;
+	line-height: 1.75rem; /* Match landing page */
+	font-size: 1.125rem; /* Match landing page text-lg (18px) */
 }
 
 .sf-logo-text .fail {
@@ -43,6 +50,7 @@ body {
 .sf-brand-link {
 	gap: 0.5rem;
 	letter-spacing: -0.025em;
+	text-decoration: none !important;
 }
 
 .site-content {
@@ -241,7 +249,8 @@ a.text-dark:hover {
 	background:#03a87c;
 	color:#fff !important;
 }
-.navbar-brand {
+/* Override default navbar-brand styles - Ship.Fail custom branding above */
+.navbar-brand.sf-default-override {
 	margin-right:2rem;
 	font-size:1.55rem;
     font-family:"Georgia","Times New Roman",serif;
