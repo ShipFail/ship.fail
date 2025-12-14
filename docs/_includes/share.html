@@ -6,10 +6,6 @@
     <div class="share d-inline-block">
       <!-- AddToAny BEGIN -->
       <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-        <img id="qrcode" title="Wechat"
-          src="/assets/authors/huan/avatar.webp"
-          width="64" height="64"
-        />
         <a class="a2a_button_twitter" title='Twitter'></a>
         <a class="a2a_button_linkedin" title='LinkedIn'></a>
         <a class="a2a_button_facebook" title='FaceBook'></a>
@@ -20,13 +16,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  var href = document.location.href
-  var url = 'https://api.qrserver.com/v1/create-qr-code/?data='
-            + href
-            + '&size=512x512'
-  var img = document.getElementById('qrcode')
-
-  img.src=encodeURI(url)
-</script>
