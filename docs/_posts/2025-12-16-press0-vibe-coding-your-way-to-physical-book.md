@@ -1,7 +1,7 @@
 ---
 title: "Press0: Vibe Coding Your Way to a Physical Book"
 date: 2025-12-16
-author: ShipFail Team
+author: huan
 categories: launch
 tags:
   - press0
