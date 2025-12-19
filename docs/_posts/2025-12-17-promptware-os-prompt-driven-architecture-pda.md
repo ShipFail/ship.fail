@@ -1,5 +1,5 @@
 ---
-title: "PromptWare OS & Prompt‑Driven Architecture (PDA)"
+title: "PromptWar̊e ØS & Prompt‑Driven Architecture (PDA)"
 excerpt: "An ACM/IEEE‑style industry research report for AI co‑founder builders. Prompt‑Driven Architecture (PDA) is an emerging systems pattern where natural language prompts become the primary control plane."
 categories: "engineering"
 author: "huan"
@@ -12,26 +12,26 @@ tags:
 image: /assets/2025/12-promptware-os-prompt-driven-architecture-pda/pda-report.webp
 ---
 
-🔖 Promptware OS (Ship.Fail) + research landscape for **“prompts as system logic”** (agent boot, kernel, skills/tools, memory, eval, security)  
+🔖 PromptWar̊e ØS (Ship.Fail) + research landscape for **“prompts as system logic”** (agent boot, kernel, skills/tools, memory, eval, security)  
 — An ACM/IEEE‑style industry research report for AI co‑founder builders
 
 ---
 
 ## Abstract
 
-Prompt‑Driven Architecture (PDA) is an emerging systems pattern where **natural language prompts become the primary control plane** for complex software behavior: planning, tool use, memory management, error recovery, and policy enforcement. PromptWare OS (Ship.Fail) proposes an explicit OS‑style decomposition—**bootloader → microkernel → init agent → skills → tools**—implemented as fetchable Markdown and URL‑addressable executable utilities, aiming to make promptware composable, reproducible, and evolvable at scale.
+Prompt‑Driven Architecture (PDA) is an emerging systems pattern where **natural language prompts become the primary control plane** for complex software behavior: planning, tool use, memory management, error recovery, and policy enforcement. PromptWar̊e ØS / PromptWare OS (Ship.Fail) proposes an explicit OS‑style decomposition—**bootloader → microkernel → init agent → skills → tools**—implemented as fetchable Markdown and URL‑addressable executable utilities, aiming to make promptware composable, reproducible, and evolvable at scale.
 
-This report synthesizes PromptWare OS’s architecture and threat model with the 2022–2025 research literature on (i) prompt programming and orchestration, (ii) LLM agents and tool interfaces, (iii) OS‑inspired memory management, (iv) evaluation harnesses for prompts/agents, and (v) prompt‑layer security (prompt injection, instruction hierarchy, and adaptive attacks). The focus is **deep technical alignment**: mapping each PromptWare OS primitive to validated research patterns, identifying gaps, and proposing a practical learning curriculum for builders.
+This report synthesizes PromptWar̊e ØS’s architecture and threat model with the 2022–2025 research literature on (i) prompt programming and orchestration, (ii) LLM agents and tool interfaces, (iii) OS‑inspired memory management, (iv) evaluation harnesses for prompts/agents, and (v) prompt‑layer security (prompt injection, instruction hierarchy, and adaptive attacks). The focus is **deep technical alignment**: mapping each PromptWar̊e ØS primitive to validated research patterns, identifying gaps, and proposing a practical learning curriculum for builders.
 
 ---
 
 ## Executive summary (for builders)
 
 1. **PDA is real and already “the default architecture” of agentic systems**—ReAct‑style loops, tool routing, reflection, and retrieval form a de‑facto runtime even when teams don’t call it an OS. See ReAct [R06], MRKL [R07], Toolformer [R08], HuggingGPT [R09].
-2. **PromptWare OS is a clean, minimal “systems spec” for promptware**: a boot block loads a small kernel with syscalls, then starts an init agent which dynamically loads skills and invokes tools as ephemeral remote commands [H02][H03]. This closely matches modular agent surveys [R19] and OS‑inspired memory management (MemGPT) [R12].
+2. **PromptWar̊e ØS (PromptWare OS) is a clean, minimal “systems spec” for promptware**: a boot block loads a small kernel with syscalls, then starts an init agent which dynamically loads skills and invokes tools as ephemeral remote commands [H02][H03]. This closely matches modular agent surveys [R19] and OS‑inspired memory management (MemGPT) [R12].
 3. **Security is the ring‑0 tax:** agentic PDA blurs instructions and data, making indirect prompt injection analogous to arbitrary code execution [R24]. “Defenses” frequently fail against adaptive attackers [R27]. Practical design requires instruction hierarchy enforcement [R26] + capability compartmentalization.
 4. **Evaluation must be first‑class:** promptware without continuous evaluation collapses into folklore. PromptBench/DyVal [R16][R17], AgentBench/GAIA [R20][R21], StableToolBench [R18], and SWE‑agent’s ACI lessons [R13] provide the current best scaffolding.
-5. **The core research gap for PromptWare OS builders:** a rigorous, repeatable method to (a) express system behavior in **pure natural language** without brittle DSLs, and (b) verify that behavior under adversarial inputs and changing tools.
+5. **The core research gap for PromptWar̊e ØS builders:** a rigorous, repeatable method to (a) express system behavior in **pure natural language** without brittle DSLs, and (b) verify that behavior under adversarial inputs and changing tools.
 
 ---
 
@@ -41,7 +41,7 @@ This report synthesizes PromptWare OS’s architecture and threat model with the
 
 We used:
 
-* **Primary PromptWare OS texts:** Ship.Fail posts defining PromptWare OS, English‑at‑ring‑0 framing, and boot/kernel/Unix decomposition [H01–H03].
+* **Primary PromptWar̊e ØS texts:** Ship.Fail posts defining PromptWar̊e ØS, English‑at‑ring‑0 framing, and boot/kernel/Unix decomposition [H01–H03].
 * **Peer‑reviewed / archival research:** arXiv/OpenReview/ICLR/NeurIPS/ACM papers on agents, tool use, memory, evaluation, and security [R01–R29].
 * **Industry standards & incident reporting:** benchmark repos/docs, plus practitioner write‑ups to contextualize deployment realities [I01–I05].
 
@@ -59,7 +59,7 @@ This report prioritizes systems that achieve this with **natural language + mini
 
 ---
 
-# 1. PromptWare OS as a systems spec
+# 1. PromptWar̊e ØS as a systems spec
 
 ## 1.1 English at ring 0 (motivation)
 
@@ -69,15 +69,15 @@ Huan’s “English at ring 0” framing argues that the *most valuable logic* i
 
 **Builder interpretation:** ring‑0 is not a metaphor for “LLMs are magical,” but for **privilege**: prompts decide actions that touch files, APIs, money, humans. Once you attach tools, prompt text becomes an executable policy surface.
 
-## 1.2 PromptWare OS bootloader: one line to mount a brain
+## 1.2 PromptWar̊e ØS bootloader: one line to mount a brain
 
-PromptWare OS defines a minimal **bootloader snippet** that points an agent to a canonical library—effectively “mounting” an external prompt filesystem and letting the agent fetch its persona/skills on demand [H02]. This aligns with empirical evidence that teams currently scatter prompts across repos and formats, making management and QA difficult [R02]. It also aligns with the emerging practice of storing prompts as first‑class repo artifacts to enable review, sharing, and iteration [I02].
+PromptWar̊e ØS defines a minimal **bootloader snippet** that points an agent to a canonical library—effectively “mounting” an external prompt filesystem and letting the agent fetch its persona/skills on demand [H02]. This aligns with empirical evidence that teams currently scatter prompts across repos and formats, making management and QA difficult [R02]. It also aligns with the emerging practice of storing prompts as first‑class repo artifacts to enable review, sharing, and iteration [I02].
 
 **Key property:** the boot prompt converts a raw LLM into a configured agent through a **stable reference** (URL + path conventions) rather than copy‑pasting large prompts.
 
 ## 1.3 Microkernel + syscalls: promptware as OS primitives
 
-PromptWare OS’s Unix‑architecture post formalizes the system as:
+PromptWar̊e ØS’s Unix‑architecture post formalizes the system as:
 
 * **Bootloader → Kernel → Init agent → Skills → Tools**, mirroring Linux boot [H03].
 * A **tiny immutable kernel** that exposes syscalls (`os_resolve`, `os_ingest`, `os_invoke`) [H03].
@@ -86,18 +86,18 @@ This mirrors a broad research trend: agent performance improves when we replace 
 
 ## 1.4 Tools as small Unix‑like commands + zero‑footprint protocol
 
-PromptWare OS argues tools should be **remote‑first, ephemeral, and self‑describing** (e.g., `deno run -A <url> --help`), leaving no persistent workspace debris [H02][H03]. Research on agent‑computer interfaces (ACI) in SWE‑agent shows that **interface design** (how an agent reads files, edits, runs tests) materially changes success rates [R13]. PromptWare OS’s “tool = small script + help text” is effectively an ACI design choice.
+PromptWar̊e ØS argues tools should be **remote‑first, ephemeral, and self‑describing** (e.g., `deno run -A <url> --help`), leaving no persistent workspace debris [H02][H03]. Research on agent‑computer interfaces (ACI) in SWE‑agent shows that **interface design** (how an agent reads files, edits, runs tests) materially changes success rates [R13]. PromptWar̊e ØS’s “tool = small script + help text” is effectively an ACI design choice.
 
 ---
 
-# 2. A unified PDA model (PromptWare OS ↔ research)
+# 2. A unified PDA model (PromptWar̊e ØS ↔ research)
 
-We map PromptWare OS primitives to a generalized PDA stack:
+We map PromptWar̊e ØS primitives to a generalized PDA stack:
 
 ![OS Booting](/assets/2025/12-promptware-os-prompt-driven-architecture-pda/terminal.webp)
 
 ```
-PDA Stack (PromptWare OS‑compatible)
+PDA Stack (PromptWar̊e ØS‑compatible)
 
 (1) Boot / Loader: minimal config that names root + kernel + init
 (2) Kernel: immutable policies + syscalls + instruction hierarchy
@@ -111,7 +111,7 @@ PDA Stack (PromptWare OS‑compatible)
 
 For each primitive, we provide:
 
-* **What PromptWare OS proposes**
+* **What PromptWar̊e ØS proposes**
 * **Closest research lineage**
 * **Design risks + mitigations**
 * **Implementation notes for builders**
@@ -122,7 +122,7 @@ For each primitive, we provide:
 
 ## 3.1 The boot block as an executable contract
 
-PromptWare OS’s boot block (root/kernel/init) is a **reproducibility artifact**: share a boot config, replicate an agent’s state [H03]. This rhymes with the evaluation community’s push for stable, reproducible agent environments (e.g., StableToolBench’s virtual API server to avoid tool drift) [R18].
+PromptWar̊e ØS’s boot block (root/kernel/init) is a **reproducibility artifact**: share a boot config, replicate an agent’s state [H03]. This rhymes with the evaluation community’s push for stable, reproducible agent environments (e.g., StableToolBench’s virtual API server to avoid tool drift) [R18].
 
 ### Risks
 
@@ -137,7 +137,7 @@ PromptWare OS’s boot block (root/kernel/init) is a **reproducibility artifact*
 
 ## 3.2 Booting without DSLs: “pure NL” initialization
 
-Most real systems still do boot via **system prompts** and conventions, not formal loaders. Research on **instruction hierarchy** argues a fundamental cause of prompt injection is that models fail to robustly privilege system/developer instructions over untrusted inputs; training explicit hierarchy improves robustness [R26]. PromptWare OS’s microkernel is a natural place to codify this hierarchy as a kernel policy.
+Most real systems still do boot via **system prompts** and conventions, not formal loaders. Research on **instruction hierarchy** argues a fundamental cause of prompt injection is that models fail to robustly privilege system/developer instructions over untrusted inputs; training explicit hierarchy improves robustness [R26]. PromptWar̊e ØS’s microkernel is a natural place to codify this hierarchy as a kernel policy.
 
 **Builder takeaway:** The bootloader should not just load files; it should also declare the **privilege model**.
 
@@ -147,9 +147,9 @@ Most real systems still do boot via **system prompts** and conventions, not form
 
 ## 4.1 What belongs in the kernel?
 
-PromptWare OS explicitly claims the kernel “defines the physics of the world” and contains no personality [H03]. In agent literature, this separation appears as: base policies + safety constraints (global), then task‑specific prompts (local) [R19]. In Constitutional AI, a *constitution* (rules) supervises behavior at scale [R25].
+PromptWar̊e ØS explicitly claims the kernel “defines the physics of the world” and contains no personality [H03]. In agent literature, this separation appears as: base policies + safety constraints (global), then task‑specific prompts (local) [R19]. In Constitutional AI, a *constitution* (rules) supervises behavior at scale [R25].
 
-**Recommended kernel contents (PromptWare OS‑style):**
+**Recommended kernel contents (PromptWar̊e ØS‑style):**
 
 * Instruction hierarchy and conflict resolution rules.
 * Capability declarations (what tools exist; how to invoke).
@@ -180,7 +180,7 @@ PromptWare OS explicitly claims the kernel “defines the physics of the world�
 
 ## 5.1 Init agent: persona + capability envelope
 
-PromptWare OS treats init as the first user‑space process, defining persona and loading skills [H03]. This maps cleanly onto agent frameworks that separate:
+PromptWar̊e ØS treats init as the first user‑space process, defining persona and loading skills [H03]. This maps cleanly onto agent frameworks that separate:
 
 * **role/persona**,
 * **planning loop**,
@@ -201,7 +201,7 @@ PromptWare OS treats init as the first user‑space process, defining persona an
 
 ## 5.2 Skills as prompt libraries (shared, modular, load‑on‑demand)
 
-PromptWare OS models skills as shared libraries (like `/usr/lib`) that any agent can ingest [H03]. This directly addresses observed prompt management problems (duplication, inconsistent formatting, missing QA) in large GitHub prompt corpora [R02].
+PromptWar̊e ØS models skills as shared libraries (like `/usr/lib`) that any agent can ingest [H03]. This directly addresses observed prompt management problems (duplication, inconsistent formatting, missing QA) in large GitHub prompt corpora [R02].
 
 ### “Pure NL” skill programming vs DSL
 
@@ -209,7 +209,7 @@ PromptWare OS models skills as shared libraries (like `/usr/lib`) that any agent
 * **Light structure:** Markdown sections, key/value blocks, examples.
 * **DSL (contrast):** LMQL provides explicit control flow + constraints to compile prompts efficiently [R01].
 
-**Why keep DSL in scope?** Even if PromptWare OS prefers Markdown/NL, DSL results are a strong indicator of what *must* eventually become explicit to achieve determinism (constraints, budgets, stopping conditions).
+**Why keep DSL in scope?** Even if PromptWar̊e ØS prefers Markdown/NL, DSL results are a strong indicator of what *must* eventually become explicit to achieve determinism (constraints, budgets, stopping conditions).
 
 ---
 
@@ -217,7 +217,7 @@ PromptWare OS models skills as shared libraries (like `/usr/lib`) that any agent
 
 ## 6.1 The Unix contract: self‑describing tools
 
-PromptWare OS’s tool doctrine is: tools are small scripts with clear `--help`, streamed and ephemeral [H02][H03]. SWE‑agent’s research shows that providing agents with structured “computer interfaces” (search, editor, runner) and predictable command grammars drastically improves success rates on real tasks [R13].
+PromptWar̊e ØS’s tool doctrine is: tools are small scripts with clear `--help`, streamed and ephemeral [H02][H03]. SWE‑agent’s research shows that providing agents with structured “computer interfaces” (search, editor, runner) and predictable command grammars drastically improves success rates on real tasks [R13].
 
 ## 6.2 Tool invocation as a first‑class research area
 
@@ -227,7 +227,7 @@ Three relevant research threads:
 2. **Learning tool usage:** Toolformer [R08].
 3. **Doc‑grounded invocation & tool drift:** Gorilla [R10] and StableToolBench [R18].
 
-**PromptWare OS alignment:**
+**PromptWar̊e ØS alignment:**
 
 * Treat `--help` (or man page) as the “tool spec.” The 2025 “Command Line GUIde” paper explicitly uses man pages + tests + LLM agents to generate safer CLI interfaces—this is extremely aligned with “help‑first” tool discovery [R15].
 
@@ -249,7 +249,7 @@ Three relevant research threads:
 
 ## 7.1 The OS analogy becomes literal (MemGPT)
 
-PromptWare OS claims “treat the context window like memory; load/unload libraries dynamically” [H03]. MemGPT explicitly frames LLM context management as **virtual memory** with tiers, paging, and interrupts [R12]. This is one of the strongest academic anchors for PromptWare OS’s memory model.
+PromptWar̊e ØS claims “treat the context window like memory; load/unload libraries dynamically” [H03]. MemGPT explicitly frames LLM context management as **virtual memory** with tiers, paging, and interrupts [R12]. This is one of the strongest academic anchors for PromptWar̊e ØS’s memory model.
 
 ## 7.2 Memory patterns for PDA systems
 
@@ -272,13 +272,13 @@ PromptWare OS claims “treat the context window like memory; load/unload librar
 
 # 8. Evaluation and testing harnesses (promptware CI/CD)
 
-PromptWare OS is implicitly a software engineering proposal; it needs *evaluation as a kernel service*, not an afterthought.
+PromptWar̊e ØS is implicitly a software engineering proposal; it needs *evaluation as a kernel service*, not an afterthought.
 
 ## 8.1 Promptware engineering as a discipline
 
-“Software Engineering for LLM Prompt Development” (promptware engineering) argues prompt development is currently ad‑hoc and needs lifecycle tooling: requirements, design, testing, debugging, evolution [R04]. PromptWare OS’s repo‑first approach fits this discipline, but the missing piece is standardized test harnesses.
+“Software Engineering for LLM Prompt Development” (promptware engineering) argues prompt development is currently ad‑hoc and needs lifecycle tooling: requirements, design, testing, debugging, evolution [R04]. PromptWar̊e ØS’s repo‑first approach fits this discipline, but the missing piece is standardized test harnesses.
 
-## 8.2 Prompt + agent benchmarks that map to PromptWare OS
+## 8.2 Prompt + agent benchmarks that map to PromptWar̊e ØS
 
 * **PromptBench** provides a unified evaluation library with adversarial prompt attacks, dynamic evaluation protocols, and analysis tools [R16].
 * **DyVal** targets benchmark contamination and dynamic difficulty scaling [R17].
@@ -286,7 +286,7 @@ PromptWare OS is implicitly a software engineering proposal; it needs *evaluatio
 * **GAIA** targets real‑world tool use proficiency and multi‑step reasoning [R21].
 * **HarmBench** standardizes automated red teaming evaluation [R28].
 
-## 8.3 Practical regression harness design (PromptWare OS‑style)
+## 8.3 Practical regression harness design (PromptWar̊e ØS‑style)
 
 Recommended harness layers:
 
@@ -306,11 +306,11 @@ Indirect prompt injection research shows LLM‑integrated applications blur the 
 
 ## 9.2 Why defenses fail: adaptive attackers
 
-“The Attacker Moves Second” demonstrates that many proposed defenses collapse against adaptive optimization and human red teaming—often reaching >90% attack success in their evaluation setup [R27]. This suggests PromptWare OS builders should treat prompt injection as an **expected failure mode**, not an edge case.
+“The Attacker Moves Second” demonstrates that many proposed defenses collapse against adaptive optimization and human red teaming—often reaching >90% attack success in their evaluation setup [R27]. This suggests PromptWar̊e ØS builders should treat prompt injection as an **expected failure mode**, not an edge case.
 
 ## 9.3 Instruction hierarchy as a kernel primitive
 
-The Instruction Hierarchy paper proposes explicit priority levels and shows training models to respect hierarchy improves robustness with minimal capability loss [R26]. This maps naturally onto PromptWare OS:
+The Instruction Hierarchy paper proposes explicit priority levels and shows training models to respect hierarchy improves robustness with minimal capability loss [R26]. This maps naturally onto PromptWar̊e ØS:
 
 * hierarchy should live in `os/kernel.md` as non‑negotiable semantics,
 * tool outputs and retrieved docs should be low‑privilege by default.
@@ -343,20 +343,20 @@ The Instruction Hierarchy paper proposes explicit priority levels and shows trai
 
 ---
 
-# 10. Where PromptWare OS is *distinct* (and where research is thin)
+# 10. Where PromptWar̊e ØS is *distinct* (and where research is thin)
 
-![PromptWare OS](/assets/2025/12-promptware-os-prompt-driven-architecture-pda/stacked-blocks.webp)
+![PromptWar̊e ØS](/assets/2025/12-promptware-os-prompt-driven-architecture-pda/stacked-blocks.webp)
 
 ## 10.1 Distinctive contribution: URL‑addressable, bootable promptware with Unix discipline
 
-Many frameworks implement agent loops, but PromptWare OS is unusually explicit about:
+Many frameworks implement agent loops, but PromptWar̊e ØS is unusually explicit about:
 
 * bootable configuration,
 * microkernel syscalls,
 * tool ephemerality + workspace sanctity,
 * skills as shared libraries.
 
-Academic work tends to present these as “systems engineering choices,” not as an OS spec. PromptWare OS is a **naming + packaging** move: turning tacit patterns into a consistent contract.
+Academic work tends to present these as “systems engineering choices,” not as an OS spec. PromptWar̊e ØS is a **naming + packaging** move: turning tacit patterns into a consistent contract.
 
 ## 10.2 Research gaps that matter to builders
 
@@ -405,14 +405,14 @@ This curriculum is ordered to build *systems intuition* first, then add rigor.
 
 **Deliverable:** add paging rules: what to keep hot vs cold; when to ingest skills.
 
-## Week 4 — PromptWare OS proper (boot/kernel/init)
+## Week 4 — PromptWar̊e ØS proper (boot/kernel/init)
 
 * [H02] One Line to Boot (Ship.Fail) — bootloader + persona/bookshelf.
 * [H03] Unix Architecture (Ship.Fail) — microkernel syscalls, zero‑footprint tools.
 * [R02] Prompt management at scale — what breaks in the wild.
 * [I02] Repo‑stored prompts — operational practices.
 
-**Deliverable:** publish a minimal PromptWare OS‑style repo and a boot block.
+**Deliverable:** publish a minimal PromptWar̊e ØS‑style repo and a boot block.
 
 ## Week 5 — Evaluation harnesses (make it real)
 
@@ -447,13 +447,13 @@ This curriculum is ordered to build *systems intuition* first, then add rigor.
 
 > Notes: We bias toward papers that (a) treat language as executable control, and (b) inform PromptWare OS primitives.
 
-## PromptWare OS core (Ship.Fail)
+## PromptWar̊e ØS core (Ship.Fail)
 
-* **[H01]** H. Li, *When English Hits Ring 0: A Field Guide to PromptWare*, Ship.Fail (Dec 03, 2025).
+* **[H01]** H. Li, *When English Hits Ring 0: A Field Guide to PromptWar̊e ØS*, Ship.Fail (Dec 03, 2025).
   **Why it matters:** frames prompts as software “source,” introduces ring‑0 privilege framing.
-* **[H02]** H. Li, *Promptware OS: One Line to Boot Your AI Co‑Founders*, Ship.Fail (Dec 08, 2025).
+* **[H02]** H. Li, *PromptWar̊e ØS: One Line to Boot Your AI Co‑Founders*, Ship.Fail (Dec 08, 2025).
   **Why it matters:** bootloader + persona/bookshelf decomposition.
-* **[H03]** H. Li, *Promptware OS Ships: Unix Architecture for Your AI Co‑Founders*, Ship.Fail (Dec 13, 2025).
+* **[H03]** H. Li, *PromptWar̊e ØS Ships: Unix Architecture for Your AI Co‑Founders*, Ship.Fail (Dec 13, 2025).
   **Why it matters:** microkernel + syscalls + zero‑footprint tools.
 
 ## Prompt programming / orchestration

@@ -46,11 +46,11 @@ We realized we were treating our AI models like glorified `sed` commands. We wer
 
 ## The Pivot: From Scripts to Synapses
 
-That’s when we flipped the table. We stopped writing scripts and started writing **Promptware**.
+That’s when we flipped the table. We stopped writing scripts and started writing **PromptWar̊e ØS**.
 
-![Promptware OS Press0](/assets/2025/12-press0-vibe-coding-your-way-to-physical-book/promptware-os-press0.webp)
+![PromptWar̊e ØS Press0](/assets/2025/12-press0-vibe-coding-your-way-to-physical-book/promptware-os-press0.webp)
 
-We built Press0 on top of **[Promptware OS](https://shipfail.github.io/promptware/)**, our new operating system for intelligent agents.
+We built Press0 on top of **[PromptWar̊e ØS](https://shipfail.github.io/promptware/)**, our new operating system for intelligent agents.
 
 Instead of writing rigid logic, we gave the agent a **Mission**:
 
@@ -81,7 +81,7 @@ Press0 is cool because it makes books. But it’s *important* because of how it�
 
 We are entering the era of **Vibe Coding**. The future of software isn't just about better algorithms; it's about better **Prompts as Logic**.
 
-Promptware OS allows you to:
+PromptWar̊e ØS (PromptWare OS) allows you to:
 1.  **Manage Prompts like Code:** Version control your agent's "soul."
 2.  **Keep it Clean:** Agents run in ephemeral "clean rooms" so they don't mess up your local dev environment.
 3.  **Live off the Land:** Agents treat the web as their filesystem.
@@ -94,7 +94,7 @@ If you have a blog, a documentation site, or a folder of notes that *should* be 
 
 ![Blog Markdown to PDF](/assets/2025/12-press0-vibe-coding-your-way-to-physical-book/raw-blog-post-to-pdf.webp)
 
-And if you’re building the next generation of AI tools, stop writing brittle scripts. Come build on Promptware OS.
+And if you’re building the next generation of AI tools, stop writing brittle scripts. Come build on PromptWar̊e ØS.
 
 **👉 [Star the Press0 Repository on GitHub](https://github.com/shipfail/press0)**
 

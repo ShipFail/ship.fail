@@ -1,5 +1,5 @@
 ---
-title: "When English Hits Ring 0: A Field Guide to PromptWare"
+title: "When English Hits Ring 0: A Field Guide to PromptWar̊e ØS"
 excerpt: "Software 1.0 was code, 2.0 was data, 3.0 is prompts. Who owns prompts, how do we license them, and what happens when English effectively runs at ring 0?"
 categories: engineering
 author: huan
@@ -21,13 +21,13 @@ I started this whole journey with an extremely boring question:
 
 MIT? Apache? Some Creative Commons flavor? Or do we need a new license family for prompts and agents?
 
-I thought I was just going to compare MIT vs Apache vs CC and go back to work. Instead, I fell down a rabbit hole that ended with PromptWare, Software 5.0, and the slightly cursed idea that one day English will effectively run at ring 0.
+I thought I was just going to compare MIT vs Apache vs CC and go back to work. Instead, I fell down a rabbit hole that ended with PromptWare OS, Software 5.0, and the slightly cursed idea that one day English will effectively run at ring 0.
 
 This post is my field guide from that trip.
 
 ---
 
-## 1. How a Boring License Question Turned into a PromptWare Rabbit Hole
+## 1. How a Boring License Question Turned into a PromptWar̊e ØS Rabbit Hole
 
 At the beginning, I only wanted to tidy up my house.
 
@@ -51,7 +51,7 @@ MIT? Apache? CC BY? CC BY-SA? Some sad PDF that says "usage allowed for good vib
 Ten tabs later I realized two things:
 
 1. The legal substrate of our world is still mostly old-school FOSS.
-2. None of the existing licenses really speak PromptWare yet.
+2. None of the existing licenses really speak PromptWar̊e ØS yet.
 
 Which is how I ended up sketching a Prompt Public License (PPL, see my other blog post [From GPL to Prompts: Rethinking Open Source Licenses for the AI-Native Era
 ](https://preangel.ai/2025/12/02/from-gpl-to-prompts/)) and then zooming out into the bigger question:
@@ -62,7 +62,7 @@ Which is how I ended up sketching a Prompt Public License (PPL, see my other blo
 
 ## 2. Licenses as Soil: MIT, Apache, CC, and the Missing Prompt License
 
-Before we talk about PromptWare and Software 3.0+, we have to talk about soil.
+Before we talk about PromptWar̊e ØS and Software 3.0+, we have to talk about soil.
 
 Software does not grow in a vacuum; it grows in license soil. Whatever we plant there inherits the nutrients, bugs, and weird fungi living in that soil.
 
@@ -120,13 +120,13 @@ MIT and Apache do not know about "prompt injection" or "agent memory" either; th
 
 So PPL for me is less about inventing a clever license and more about asking:
 
-> What would an OSI-spirit license for PromptWare look like, if we took prompts seriously as the source code of Software 3.0?
+> What would an OSI-spirit license for PromptWar̊e ØS look like, if we took prompts seriously as the source code of Software 3.0?
 
 To answer that, we have to zoom out past licenses and look at the bigger timeline we are living in.
 
 ---
 
-## 3. PromptWare: Giving Software a Third Dimension
+## 3. PromptWar̊e ØS: Giving Software a Third Dimension
 
 Let us rewind.
 
@@ -169,7 +169,7 @@ The weird thing about Software 2.0 is that the program still exists, but it is n
 
 We are still Software 1.0 programmers, but the core of perception and prediction has moved into Neuralware.
 
-### 3.3. Software 3.0 - Promptware: Natural Language as API and IDE
+### 3.3. Software 3.0 - PromptWar̊e ØS: Natural Language as API and IDE
 
 Then we hit 2022 and the LLMs escape from the research labs.
 
@@ -193,19 +193,19 @@ In Software 3.0, a program looks like this:
 
 You are still writing Python or TypeScript around the edges, but the most interesting behavior lives in these prompts and flows.
 
-This is what I call PromptWare:
+This is what I call PromptWar̊e ØS (PromptWare OS):
 
-> PromptWare is software whose primary logic is expressed in prompts, not in traditional source code.
+> PromptWar̊e ØS is software whose primary logic is expressed in prompts, not in traditional source code.
 
 And once you see the world that way, you cannot unsee it.
 
-![Software 3.0 - PromptWare]({{ 'assets/2025/12-when-english-hits-ring-0/software-3.0-promptware.webp' | relative_url }})
+![Software 3.0 - PromptWar̊e ØS]({{ 'assets/2025/12-when-english-hits-ring-0/software-3.0-promptware.webp' | relative_url }})
 
 ---
 
-## 4. Beyond PromptWare: Agentware and Societyware (Software 4.0 and 5.0)
+## 4. Beyond PromptWar̊e ØS: Agentware and Societyware (Software 4.0 and 5.0)
 
-PromptWare explains the present. But it does not explain where we are heading.
+PromptWar̊e ØS explains the present. But it does not explain where we are heading.
 
 Let us extrapolate a bit.
 
@@ -315,7 +315,7 @@ In his legendary PyCon 2014 talk [The Birth and Death of JavaScript](https://www
 
 It is hilarious because it is both absurd and consistent with our obsession for layering more JavaScript onto everything.
 
-The PromptWare version of that joke looks like this:
+The PromptWar̊e ØS version of that joke looks like this:
 
 > One day, the most critical systems in our lives will be governed by natural language specs that sit at the very bottom of the socio-technical stack.
 
@@ -331,11 +331,11 @@ At that point, saying "when English hits ring 0" is less a joke and more a gentl
 
 ---
 
-## 6. What PromptWare Needs to Grow Up: Engineering, Licensing, and Culture
+## 6. What PromptWar̊e ØS Needs to Grow Up: Engineering, Licensing, and Culture
 
-PromptWare is still in its teenager phase: very powerful, a little chaotic, questionable fashion sense.
+PromptWar̊e ØS is still in its teenager phase: very powerful, a little chaotic, questionable fashion sense.
 
-### 6.1. Promptware Engineering: Tests, Types, and Version Control for English
+### 6.1. PromptWar̊e ØS Engineering: Tests, Types, and Version Control for English
 
 If prompts are programs, we should treat them accordingly:
 
@@ -346,11 +346,11 @@ If prompts are programs, we should treat them accordingly:
 
 "Just tweak the prompt until it works" is fine for a hackathon demo. It is less fine when your ring-0-ish prompt is deciding which invoices to pay.
 
-### 6.2. Licensing Promptware: Why PPL Might Matter
+### 6.2. Licensing PromptWar̊e ØS: Why PPL Might Matter
 
 Licensing is how we encode norms into the soil.
 
-For PromptWare, we probably want:
+For PromptWar̊e ØS, we probably want:
 
 - OSI-style freedoms (use, modify, share, commercialize),
 - clarity about what counts as a derivative prompt,
@@ -369,12 +369,12 @@ The future will not be won by a single legendary system prompt.
 
 It will be won by ecosystems:
 
-- Shared PromptWare libraries.
+- Shared PromptWar̊e ØS libraries.
 - Reusable agent roles and patterns.
 - Registries, linters, and test suites.
 - Communities that know how to review and reason about prompts.
 
-UNIX did not win because of one perfect binary; it won because of a culture of small, composable tools. PromptWare will need the same culture if we want Software 3.0 to 5.0 to feel like a flourishing ecosystem, not a random zoo of prompt-glued SaaS.
+UNIX did not win because of one perfect binary; it won because of a culture of small, composable tools. PromptWar̊e ØS will need the same culture if we want Software 3.0 to 5.0 to feel like a flourishing ecosystem, not a random zoo of prompt-glued SaaS.
 
 ---
 
@@ -408,7 +408,7 @@ You do not have to build Software 5.0 now. Just avoid building things that canno
 
 Before you ship, try a few uncomfortable questions:
 
-- Is this a real product, or just PromptWare duct-taped to someone else's API?
+- Is this a real product, or just PromptWar̊e ØS duct-taped to someone else's API?
 - What happens if my prompts leak into the open? Am I okay with that?
 - If this ended up effectively running at ring 0 of someone's business, would I trust it?
 
@@ -427,16 +427,16 @@ If you want to go deeper down this rabbit hole, here are a few starting points:
 - [Promptware Engineering: Software Engineering for LLM Prompt Development](https://arxiv.org/abs/2503.02400) - an academic look at prompts as first-class software artifacts.
 - [The Birth and Death of JavaScript](https://www.destroyallsoftware.com/talks/the-birth-and-death-of-javascript) - the sci-fi keynote that partially inspired the "English at ring 0" energy in this post.
 
-## 9. A Tiny PromptWare Manifesto
+## 9. A Tiny PromptWar̊e ØS Manifesto
 
 I will close with a short manifesto you are welcome to fork, remix, or just steal.
 
 1. Prompts are programs. Treat them with the same respect as code.
-2. PromptWare is software. Give it tests, tooling, and version control.
+2. PromptWar̊e ØS is software. Give it tests, tooling, and version control.
 3. Licenses are culture. Choose them intentionally; they are how we encode our values into the soil.
 4. Agents are colleagues. Design their roles, guardrails, and incentives like you are hiring someone who could one day run the company.
 5. Societyware is coming. The systems we are quietly building now will feel like civilizations later.
 
-If we are going to let English inch closer to ring 0, we might as well make sure it is good English, sitting on good PromptWare, running inside good institutions.
+If we are going to let English inch closer to ring 0, we might as well make sure it is good English, sitting on good PromptWar̊e ØS, running inside good institutions.
 
 And maybe, just maybe, our future agents will look back at our scrappy prompts from 2025 the way we look at early JavaScript: a little embarrassed, a little nostalgic, and very grateful that we decided to grow up.

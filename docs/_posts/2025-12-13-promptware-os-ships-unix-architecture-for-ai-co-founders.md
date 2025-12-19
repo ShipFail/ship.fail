@@ -1,6 +1,6 @@
 ---
-title: "Promptware OS Ships: Unix Architecture for Your AI Co-Founders"
-excerpt: "Stop copy-pasting prompts. Start booting an OS. Promptware OS applies Unix architecture principles to transform scattered prompts into a structured, distributed, and bootable environment for your AI co-founders."
+title: "PromptWar̊e ØS Ships: Unix Architecture for Your AI Co-Founders"
+excerpt: "Stop copy-pasting prompts. Start booting an OS. PromptWar̊e ØS applies Unix architecture principles to transform scattered prompts into a structured, distributed, and bootable environment for your AI co-founders."
 author: huan
 categories: announcement
 tags:
@@ -17,15 +17,15 @@ image: /assets/2025/12-promptware-os-ships-unix-architecture-for-ai-co-founders/
 
 We are entering the era of "Vibe Coding," where the primary interface to software creation is natural language. Yet, our method for managing this interface is stuck in the stone age: scattered text files, copy-pasted "You are a helpful assistant" blocks, and fragile, project-specific configurations.
 
-Today, we are introducing **Promptware OS**, an LLM-Native Operating System designed to turn your chaotic prompt library into a structured, distributed, and bootable environment.
+Today, we are introducing **PromptWar̊e ØS**, an LLM-Native Operating System designed to turn your chaotic prompt library into a structured, distributed, and bootable environment.
 
 ---
 
 ## The Philosophy: English at Ring 0
 
-Promptware OS is built on a radical premise: **The Prompt is the Code.**
+PromptWar̊e ØS (PromptWare OS) is built on a radical premise: **The Prompt is the Code.**
 
-In traditional computing, the OS manages hardware resources (CPU, RAM, Disk). In Promptware OS, the "Hardware" is the Large Language Model itself.
+In traditional computing, the OS manages hardware resources (CPU, RAM, Disk). In PromptWar̊e ØS, the "Hardware" is the Large Language Model itself.
 *   **CPU**: The Inference Engine.
 *   **RAM**: The Context Window.
 *   **Disk**: The Distributed File System (Remote + Local).
@@ -33,7 +33,7 @@ In traditional computing, the OS manages hardware resources (CPU, RAM, Disk). In
 We have applied the timeless principles of **Unix Architecture** to the fluid world of LLMs.
 
 ### 1. The Microkernel Architecture
-Instead of a monolithic "Super Prompt" that tries to do everything, Promptware OS uses a tiny, immutable Kernel (`os/kernel.md`). It defines the physics of the world but contains no personality.
+Instead of a monolithic "Super Prompt" that tries to do everything, PromptWar̊e ØS uses a tiny, immutable Kernel (`os/kernel.md`). It defines the physics of the world but contains no personality.
 
 It exposes **System Calls**—the primitives of the OS:
 *   `os_resolve(path)`: Maps virtual paths to real URLs.
@@ -41,10 +41,10 @@ It exposes **System Calls**—the primitives of the OS:
 *   `os_invoke(tool)`: Executes remote tools without polluting your workspace.
 
 ### 2. The One-Line Boot
-Gone are the days of pasting 500 lines of context. To start Promptware OS, you paste a simple **Bootloader** configuration:
+Gone are the days of pasting 500 lines of context. To start PromptWar̊e ØS, you paste a simple **Bootloader** configuration:
 
 ```yaml
-# Promptware OS Bootloader
+# PromptWar̊e ØS Bootloader
 root: https://shipfail.github.io/promptware/os/
 kernel: /kernel.md
 init: /agents/powell.md
@@ -55,7 +55,7 @@ The LLM reads this, fetches the Kernel, mounts the Virtual File System, and exec
 ### 3. The Zero-Footprint Protocol
 We believe your workspace is sacred. Traditional agent tools often download scripts, create temp files, and leave a mess.
 
-Promptware OS enforces a strict **Zero-Footprint Protocol**. System tools (like image optimizers or git helpers) are:
+PromptWar̊e ØS enforces a strict **Zero-Footprint Protocol**. System tools (like image optimizers or git helpers) are:
 *   **Remote-First**: They live in the cloud, not your repo.
 *   **Ephemeral**: They are streamed directly to the runtime (e.g., `deno run -A <url>`) and vanish after execution.
 
@@ -100,7 +100,7 @@ For the **Researcher**:
 
 ## Get Started
 
-Promptware OS is open source and available today.
+PromptWar̊e ØS is open source and available today.
 
 1.  **Star the Repository**: [github.com/ShipFail/promptware](https://github.com/ShipFail/promptware)
 2.  **Try the Bootloader**: Copy the boot block from the README and paste it into your favorite LLM.

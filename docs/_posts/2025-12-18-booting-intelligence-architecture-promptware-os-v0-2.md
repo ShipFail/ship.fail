@@ -1,8 +1,8 @@
 ---
-title: "Booting Intelligence: The Architecture of Promptware OS v0.2"
+title: "Booting Intelligence: The Architecture of PromptWar̊e ØS v0.2"
 date: 2025-12-18
 author: huan
-excerpt: "Promptware OS v0.2 tackles context drift with a kernel memory subsystem, JIT-linked skills, and bootloader-driven mounts."
+excerpt: "PromptWar̊e ØS v0.2 tackles context drift with a kernel memory subsystem, JIT-linked skills, and bootloader-driven mounts."
 categories: engineering
 tags:
   - architecture
@@ -19,7 +19,7 @@ The intelligence hasn't degraded, but its **operating environment** has.
 
 This is the problem of **Context Drift**. In a stateless Large Language Model (LLM), "memory" is just a sliding window of text. As the conversation grows and the window slides, the fundamental laws of your OS—the Kernel itself—get pushed out. The "Ghost in the Machine" loses its anchor.
 
-With **Promptware OS v0.2**, we stopped relying on the AI to remember who it is. We built a Kernel that remembers for it.
+With **PromptWar̊e ØS (PromptWare OS) v0.2**, we stopped relying on the AI to remember who it is. We built a Kernel that remembers for it.
 
 ## The Villain: The Amnesiac Kernel
 
@@ -129,7 +129,7 @@ The Kernel reads this at boot and maps the logical path `/skills/community` to t
 
 ## Conclusion: A Stable Foundation
 
-Promptware OS v0.2 represents a shift from "Simulation" to "Physics." We have established a set of immutable laws that the Agent cannot break, ensuring stability, security, and clarity.
+PromptWar̊e ØS v0.2 represents a shift from "Simulation" to "Physics." We have established a set of immutable laws that the Agent cannot break, ensuring stability, security, and clarity.
 
 **The Core Principles of v0.2:**
 1.  **Immutable Infrastructure**: The Bootloader (System Prompt) is the single source of truth for Identity (`root`) and Topology (`mounts`). A reboot always restores a clean state.
@@ -139,5 +139,5 @@ Promptware OS v0.2 represents a shift from "Simulation" to "Physics." We have es
 
 By moving critical infrastructure out of the "mind" of the AI and into the "body" of the OS, we are building an environment where intelligence can not only boot but thrive.
 
-*Ready to build? Check out the [Promptware OS Repository](https://github.com/ShipFail/promptware) and write your first Skill today.*
+*Ready to build? Check out the [PromptWar̊e ØS Repository](https://github.com/ShipFail/promptware) and write your first Skill today.*
 

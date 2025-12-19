@@ -1,5 +1,5 @@
 ---
-title: "Shipping PPL: A License for the Age of Promptware"
+title: "Shipping PPL: A License for the Age of PromptWar̊e ØS"
 excerpt: "We needed a license for our AI co-founders. So we built one. Introducing the Public Prompt License (PPL) v0.1."
 author: huan
 categories: announcement
@@ -22,9 +22,9 @@ We are releasing the **[Public Prompt License (PPL)](https://shipfail.github.io/
 
 ---
 
-## The Promptware Trigger
+## The PromptWar̊e ØS Trigger
 
-As we were building **[Promptware OS](https://ship.fail/blog/2025/12/13/promptware-os-ships-unix-architecture-for-ai-co-founders/)**—our operating system for AI co-founders—we hit a wall. We wanted to share our "kernel" prompts and "skills" libraries as true open source.
+As we were building **[PromptWar̊e ØS](https://ship.fail/blog/2025/12/13/promptware-os-ships-unix-architecture-for-ai-co-founders/)**—our operating system for AI co-founders—we hit a wall. We wanted to share our "kernel" prompts and "skills" libraries as true open source.
 
 But when we looked at the existing options, they didn't fit:
 
@@ -47,7 +47,7 @@ The heart of PPL is a rigorous definition of **[Prompt Source](https://github.co
 *   System Prompts & Personas
 *   Tool Descriptions & Schemas
 *   Routing Logic & Orchestration
-*   Knowledge Structure (like Promptware's bootloaders)
+*   Knowledge Structure (like PromptWar̊e ØS's bootloaders)
 
 Crucially, it explicitly **excludes** the underlying inference engine (vLLM, Ollama), the OS, and the hardware.
 
@@ -76,7 +76,7 @@ This doesn't mean SSPL is wrong. It means we're optimizing for different constra
 
 ## An Invitation to Pilot
 
-This is not just legal theory. We are applying PPL to **Promptware OS** and our internal Ship.Fail projects starting today.
+This is not just legal theory. We are applying PPL to **PromptWar̊e ØS (PromptWare OS)** and our internal Ship.Fail projects starting today.
 
 We are releasing PPL as **Draft 0.1 (Request for Comment)**. We know it isn't perfect yet. That is why we need you.
 
