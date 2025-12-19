@@ -33,17 +33,51 @@ We realized that to build a robust Operating System for AI, we cannot treat the 
 
 If the Context Window is RAM, we needed a Hard Drive.
 
-We introduced the **Kernel Memory Subsystem** (`os_memory`). Backed by a simple, stateless Deno tool (`memory.ts`), it persists critical system variables to a local JSON file (`~/.promptwareos/memory.json`).
+We introduced the **Kernel Memory Subsystem** (`os_memory`). Backed by **Deno KV**, it provides a secure, persistent key-value store for the OS.
 
-Now, when the Kernel needs to resolve a path, it doesn't ask the LLM to "recall" the root. It executes a system call:
+Crucially, we solved the **Multi-Tenancy** problem using Deno's `--location` flag. The Kernel enforces that every tool runs with `--location <root_url>`, ensuring that Alice's OS instance cannot access Bob's memory bucket, even if they run on the same machine.
+
+We also adopted a **Hierarchical Addressing** scheme. Keys are treated as paths (e.g., `users/alice/settings`), allowing the Agent to organize memory spatially, just like a file system.
+
+Now, when the Kernel needs to resolve a virtual path, it executes a system call:
 
 ```yaml
 os_resolve(path):
-  1. Retrieve system root: `root = os_memory('get', 'root')`
-  2. If path starts with '/', prepend `root`.
+  1. Check Mounts: Inspect `mounts` in Bootloader Front Matter.
+  2. Fallback: Prepend `root` (from Bootloader Front Matter).
 ```
 
-This makes the disk the **Source of Truth**. The agent can hallucinate all it wants; the file system remains stable. Just as Linux doesn't store its partition table in CPU registers, Promptware OS no longer stores its topology in the attention mechanism.
+This makes the **Bootloader** the anchor of identity (Immutable) and **Memory** the keeper of state (Mutable). The agent can hallucinate all it wants; the underlying infrastructure remains stable.
+
+## The "Immutable Infrastructure" Principle
+
+We realized that treating system configuration (like `mounts`) as mutable memory was a security risk. If a tool could overwrite the mount table, it could crash the OS.
+
+In v0.2, we enforce a strict separation:
+*   **Bootloader (System Prompt)**: Read-Only. Contains `root`, `mounts`, and `init`.
+*   **Memory (Deno KV)**: Read-Write. Contains user data and application state.
+
+This ensures that a reboot always restores a clean, correct environment, solving the "Bootstrap Paradox" permanently.
+
+## The "Dual-Context" Resolution Strategy
+
+Finally, we solved the ambiguity between **Local Files** (User Space) and **OS Resources** (Kernel Space).
+
+In v0.1, `os_resolve` tried to be smart, handling both local relative paths (`./src/index.ts`) and cloud absolute paths (`/skills/writer.md`). This caused conflicts: does `/home/user` refer to the user's laptop or the OS's virtual home?
+
+In v0.2, we adopted **Tool-Based Context Separation**:
+
+1.  **User Space (Local)**: Standard tools like `read_file` or `run_in_terminal` operate on the **Local Filesystem**. When the user says "Edit `./README.md`", it works exactly as expected.
+2.  **Kernel Space (VFS)**: System calls like `os_resolve` and `os_invoke` operate on the **OS Virtual Filesystem**. When the OS says "Load `/skills/writer.md`", it resolves via Mounts or Root.
+
+This minimizes cognitive load. The Agent uses standard paths for user work and VFS paths for system operations, with no overlap or ambiguity.
+
+To make this even clearer, we introduced the **`os://` Protocol**.
+
+*   `os://agents/powell.md` explicitly refers to an OS resource.
+*   `os_ingest` defaults to this protocol, so `os_ingest('/skills/writer.md')` is treated as `os://skills/writer.md`.
+
+This gives the Agent a clear, unambiguous way to reference the "Cloud OS" versus the "Local Disk".
 
 ## The "Aha!" Moment: Source Code vs. Compiled Binary
 
@@ -95,14 +129,15 @@ The Kernel reads this at boot and maps the logical path `/skills/community` to t
 
 ## Conclusion: A Stable Foundation
 
-Promptware OS v0.2 isn't just a collection of new features; it's a shift in philosophy.
+Promptware OS v0.2 represents a shift from "Simulation" to "Physics." We have established a set of immutable laws that the Agent cannot break, ensuring stability, security, and clarity.
 
-By acknowledging the limitations of LLM context—its drift, its cost, and its volatility—we've moved critical infrastructure out of the "mind" of the AI and into the "body" of the OS.
+**The Core Principles of v0.2:**
+1.  **Immutable Infrastructure**: The Bootloader (System Prompt) is the single source of truth for Identity (`root`) and Topology (`mounts`). A reboot always restores a clean state.
+2.  **Isolated State**: Application state lives in **Deno KV**, isolated by the `--location` flag. It is mutable, hierarchical, and persistent.
+3.  **Tool-Based Context**: We disambiguate the world by tool. User tools (`read_file`) touch the Local Disk. Kernel tools (`os_ingest`) touch the Virtual Cloud.
+4.  **Explicit Addressing**: The `os://` protocol gives us a clear, unambiguous namespace for OS resources, separate from local paths.
 
-*   **Memory** anchors identity.
-*   **JIT Linking** optimizes knowledge.
-*   **Mounts** decouple location from logic.
-
-We are building an OS that lets you boot intelligence, and—more importantly—keep it running.
+By moving critical infrastructure out of the "mind" of the AI and into the "body" of the OS, we are building an environment where intelligence can not only boot but thrive.
 
 *Ready to build? Check out the [Promptware OS Repository](https://github.com/ShipFail/promptware) and write your first Skill today.*
+
