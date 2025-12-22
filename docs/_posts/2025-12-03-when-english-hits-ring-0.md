@@ -13,7 +13,7 @@ tags:
 image: /assets/2025/12-when-english-hits-ring-0/english-hits-ring-0.webp
 ---
 
-> Software 1.0 was code. Software 2.0 was data. Software 3.0 is us yelling at a stochastic parrot until it becomes a co-founder.
+Software 1.0 was code. Software 2.0 was data. Software 3.0 is us yelling at a stochastic parrot until it becomes a co-founder.
 
 I started this whole journey with an extremely boring question:
 
