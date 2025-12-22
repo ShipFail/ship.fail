@@ -1,8 +1,8 @@
 # Makefile for awesome-chatboot
-# Author: Huan LI <zixia@zixia.net> github.com/huan
+# Author: Huan Li <huan@chatie.io> https://github.com/huan
 
 .PHONY: all
-all: serve
+all: clean serve
 
 .PHONY: install
 install:
@@ -11,11 +11,7 @@ install:
 
 .PHONY: test
 test:
-	npm run test
-
-.PHONY: code
-code:
-	code .
+	deno task test
 
 .PHONY: clean
 clean:
@@ -28,15 +24,3 @@ build:
 .PHONY: serve
 serve:
 	bundle exec jekyll serve --incremental
-
-.PHONY: dev
-dev: clean serve
-
-.PHONY: docker
-docker-serve:
-	docker run \
-		--rm \
-		-v $(pwd):/srv/jekyll:z \
-		-p 4000:4000 \
-		jekyll/jekyll \
-		jekyll serve --force_polling
