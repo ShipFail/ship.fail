@@ -201,7 +201,7 @@ What if we applied this model to natural language in LLM systems?
 
 ### Introducing Ring Zero Linguistics (R0L)
 
-![Ring Zero Linguistics](/assets/2025/12-stop-protocol-origin-story/ring-zero-inguistics.webp)
+![Ring Zero Linguistics](/assets/2025/12-stop-protocol-origin-story/ring-zero-linguistics.webp)
 
 **Ring Zero Linguistics** is natural language engineering at the kernel layer of LLM-native systems. Where traditional systems execute machine code, LLM systems execute *natural language directly*. The prompt IS the program.
 

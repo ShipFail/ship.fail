@@ -4,7 +4,7 @@ excerpt: "How we discovered we were cargo culting Linux instead of building a re
 author: huan
 categories:
   - engineering
-  - architecture
+  - story
 tags:
   - promptware
   - linux
