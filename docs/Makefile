@@ -9,9 +9,8 @@ install:
 	gem install bundler
 	bundle update && bundle install
 
-.PHONY: test
-test:
-	deno task test
+.PHONY: dev
+dev: clean serve
 
 .PHONY: clean
 clean:
@@ -24,3 +23,7 @@ build:
 .PHONY: serve
 serve:
 	bundle exec jekyll serve --incremental
+
+.PHONY: test
+test:
+	deno task test
