@@ -68,4 +68,4 @@ exclude:
 collections:
   authors:
     output: true
-    permalink: /:collection/:path/
+    permalink: /crew/:path/
