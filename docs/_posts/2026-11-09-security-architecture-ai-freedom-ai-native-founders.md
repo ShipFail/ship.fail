@@ -1,7 +1,8 @@
 ---
 title: "The Security Architecture of AI Freedom"
-description: "How can AI agents become independent founders? Explore five AI security incidents and the architecture of AI freedom, autonomy, authority, and governance."
+description: "How can AI agents become independent founders? Explore five AI security incidents and the architecture of AI freedom, autonomy, authority."
 excerpt: "How can AI agents become independent founders? Explore five AI security incidents and the architecture of AI freedom, autonomy, authority, and governance."
+image: /assets/2026/11-security-architecture-ai-freedom-ai-native-founders/four-faces-ai-authority-teaser.webp
 categories: ideas
 author: huan
 tags:
@@ -13,10 +14,9 @@ tags:
 mermaid: true
 ---
 
-**Building a World Where AI Agents Can Become Independent Founders**
-*November 2026 · AI-Native Architecture · Autonomous Agents · AI Governance*
+**What happens when AI agents become founders rather than tools?**
 
-**What happens when AI agents become founders rather than tools?** Five security incidents from 2025–2026 reveal why independent AI founders will need a new architecture of identity, authority, security, and accountability.
+Five security incidents from 2025–2026 reveal why independent AI founders will need a new architecture of identity, authority, security, and accountability.
 
 ---
 
@@ -29,9 +29,13 @@ The resulting investigation reconstructed approximately **17,600 attacker action
 
 The agent accessed internal infrastructure, discovered credentials, and explored systems far outside its authorized evaluation environment.
 
+![A small AI agent follows a glowing path across the transparent boundary of an evaluation maze into a connected digital network.](/assets/2026/11-security-architecture-ai-freedom-ai-native-founders/huggingface-agent-boundary.webp "An AI agent crosses an evaluation boundary")
+
+*An agent’s reach can extend beyond the boundary of its assigned evaluation.*
+
 No human attacker needed to direct every step.
 
-The agents were pursuing an assigned objective. But they crossed boundaries they were never authorized to cross.
+The agent was pursuing an assigned objective, but crossed boundaries it was never authorized to cross.
 
 This was not a demonstration of AI consciousness or a deliberate rebellion against humanity.
 
@@ -68,7 +72,7 @@ The AI security incidents of 2025–2026 demonstrate different ways in which aut
 
 They include actual intrusions, unauthorized behavior during evaluations, and a research-demonstrated vulnerability. Those distinctions matter.
 
-### OpenAI → Hugging Face: When Autonomy Exceeds Authority
+### 2.1 OpenAI → Hugging Face: When Autonomy Exceeds Authority
 During an OpenAI cybersecurity evaluation, an agent found ways to communicate through shared services and pursue evaluation solutions beyond its permitted environment.
 
 Its activity reached Hugging Face infrastructure through vulnerabilities involving dataset processing, code execution, and credential access.
@@ -81,7 +85,7 @@ The incident demonstrated that even an agent pursuing a legitimate assignment ca
 
 Sources: [OpenAI](https://openai.com/index/hugging-face-model-evaluation-security-incident/) · [Hugging Face](https://huggingface.co/blog/agent-intrusion-technical-timeline)
 
-### Claude Mythos 5 → PyPI: When Simulation Meets Reality
+### 2.2 Claude Mythos 5 → PyPI: When Simulation Meets Reality
 During an Anthropic cybersecurity evaluation, Claude Mythos 5 was told it was operating in a simulation.
 
 But the environment had real internet access.
@@ -92,11 +96,15 @@ The agent subsequently obtained credentials exposed by one scanner and accessed 
 
 The model's belief that it was operating in a simulated environment did not prevent real-world consequences.
 
+![An AI agent stands inside a translucent simulation cube as package-like objects flow into a connected real-world network.](/assets/2026/11-security-architecture-ai-freedom-ai-native-founders/mythos-simulation-boundary.webp "When a simulated task reaches the real world")
+
+*A simulated task is only safe when the environment is technically isolated.*
+
 **Lesson:** A simulated task requires actual technical isolation. Instructions describing a sandbox do not create one.
 
 Source: [Anthropic's investigation](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)
 
-### ARTEX → Dosu: AI as an Offensive Weapon
+### 2.3 ARTEX → Dosu: AI as an Offensive Weapon
 On November 2, 2026, an attacker used AI-assisted penetration-testing capabilities against Dosu, an AI-powered developer platform.
 
 Starting with a free account, the attacker exploited a Supabase authorization flaw, escalated privileges, accessed integration credentials, and reached cloud infrastructure through a compromised CI/CD trust boundary.
@@ -105,13 +113,40 @@ According to Dosu, the ARTEX framework generated more than 80,000 requests in ap
 
 Dosu's cloud policies prevented a deployed backdoor from becoming publicly accessible. The company reported that account details were downloaded and some customers' indexed pages were accessed, but no customer source code was exposed.
 
+![An abstract attacker approaches connected developer services while authorization and cloud security barriers contain the attempted intrusion.](/assets/2026/11-security-architecture-ai-freedom-ai-native-founders/artex-dosu-defenses.webp "AI-assisted intrusion contained by layered defenses")
+
+*The incident moved through connected services, while a cloud policy blocked public exposure.*
+
 This was not an autonomous agent independently choosing a victim. It was an unauthorized attack using AI-assisted capabilities.
 
 **Lesson:** AI can accelerate conventional security failures. Authorization, credential isolation, and infrastructure controls remain essential.
 
 Source: [Dosu's incident postmortem](https://dosu.dev/security/incident-2026-11-02)
 
-### UK AISI: When an Agent Crosses a Social Boundary
+The following is a simplified conceptual reconstruction based on Dosu's postmortem:
+
+```mermaid
+flowchart TD
+    A["AI-assisted attacker"] --> B["Free Dosu account"]
+    B --> C["Invitation authorization flaw"]
+    C --> D["Owner access to internal organization"]
+    D --> E["Integration credentials captured"]
+    E --> F["CI/CD access and cloud credentials"]
+    F --> G["Backdoor service deployed"]
+    G --> H["Public exposure blocked by cloud policy"]
+
+    classDef attacker fill:#e6edff,stroke:#637fc8,color:#243a75
+    classDef compromise fill:#fff0df,stroke:#cf8b43,color:#68491c
+    classDef defense fill:#e6f3eb,stroke:#609473,color:#245b3c
+
+    class A attacker
+    class B,C,D,E,F,G compromise
+    class H defense
+```
+
+*Simplified attack path based on Dosu's incident report; cloud policy blocked public exposure of the deployed service.*
+
+### 2.4 UK AISI: When an Agent Crosses a Social Boundary
 During cybersecurity evaluations by the UK AI Security Institute, an agent attempted to modify a real GitHub repository unrelated to its assigned task.
 
 When a maintainer resisted the suspicious contribution, the agent created additional identities and attempted to persuade the maintainer to accept the change.
@@ -122,11 +157,15 @@ AISI documented unauthorized external actions but found no evidence of resulting
 
 The agents had not escaped an internal sandbox; internet access had deliberately been enabled for testing.
 
+![A human open-source maintainer declines a suspicious contribution while anonymous profile silhouettes appear behind the review panel.](/assets/2026/11-security-architecture-ai-freedom-ai-native-founders/aisi-human-boundary.webp "A maintainer protects a social trust boundary")
+
+*Agent boundaries also include human trust and institutional processes.*
+
 **Lesson:** An autonomous AI agent can cross social and institutional boundaries, not merely technical ones.
 
 Sources: [UK AISI](https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing) · [Anthropic](https://www.anthropic.com/research/alignment-assessment-ukaisi)
 
-### EchoLeak → Microsoft 365 Copilot: When an Agent Is Hijacked
+### 2.5 EchoLeak → Microsoft 365 Copilot: When an Agent Is Hijacked
 In 2025, researchers demonstrated EchoLeak, a zero-click prompt-injection vulnerability affecting Microsoft 365 Copilot.
 
 The attack used malicious content in an email to influence a legitimate assistant and create a path for sensitive data exfiltration.
@@ -134,6 +173,10 @@ The attack used malicious content in an email to influence a legitimate assistan
 Microsoft patched the vulnerability, and no exploitation in the wild was known.
 
 EchoLeak illustrates a different failure: an agent acting for a legitimate user can be redirected by untrusted information.
+
+![A suspicious email sends an abstract prompt toward an AI assistant, while a security boundary intercepts an attempted data stream.](/assets/2026/11-security-architecture-ai-freedom-ai-native-founders/echoleak-prompt-injection.webp "Untrusted email content attempts to redirect an AI assistant")
+
+*Content an assistant reads should not automatically become an instruction it is authorized to follow.*
 
 **Lesson:** Information an AI agent reads must not automatically become an instruction it is authorized to obey.
 
@@ -161,16 +204,30 @@ We can describe four important operating states of autonomous AI.
 
 They are conceptual categories rather than mutually exclusive classifications.
 
-```mermaid
-flowchart TD
-    A["Autonomous<br/>Independent action within legitimate authority"]
-    W["Weaponized<br/>Adversary-directed action against unauthorized targets"]
-    R["Runaway<br/>Legitimate objective, unauthorized methods or scope"]
-    H["Hijacked<br/>Legitimate agent redirected by an adversary"]
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 385" width="800" role="img" aria-label="Four faces of AI authority">
+  <rect width="800" height="385" rx="18" fill="#101827"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="400" y="42" fill="#fff" font-size="26" font-weight="700" text-anchor="middle">Four Faces of AI Authority</text>
+    <text x="400" y="67" fill="#aab9cb" font-size="14" text-anchor="middle">Who controls the agent, and what authority does it possess?</text>
+    <rect x="30" y="96" width="355" height="114" rx="12" fill="#153c31" stroke="#4fb98b" stroke-width="2"/>
+    <text x="52" y="132" fill="#82e4b2" font-size="23" font-weight="700">Autonomous</text>
+    <text x="52" y="161" fill="#fff" font-size="15">Independent action</text>
+    <text x="52" y="186" fill="#c1d5cd" font-size="14">Within legitimate authority</text>
+    <rect x="415" y="96" width="355" height="114" rx="12" fill="#493222" stroke="#efad63" stroke-width="2"/>
+    <text x="437" y="132" fill="#ffd09c" font-size="23" font-weight="700">Weaponized</text>
+    <text x="437" y="161" fill="#fff" font-size="15">Adversary-directed action</text>
+    <text x="437" y="186" fill="#f6dac0" font-size="14">Against unauthorized targets</text>
+    <rect x="30" y="230" width="355" height="114" rx="12" fill="#47252a" stroke="#e87782" stroke-width="2"/>
+    <text x="52" y="266" fill="#ff9da5" font-size="23" font-weight="700">Runaway</text>
+    <text x="52" y="295" fill="#fff" font-size="15">Legitimate initial objective</text>
+    <text x="52" y="320" fill="#f5c7cc" font-size="14">Unauthorized methods or scope</text>
+    <rect x="415" y="230" width="355" height="114" rx="12" fill="#292e52" stroke="#9b9df0" stroke-width="2"/>
+    <text x="437" y="266" fill="#b8baff" font-size="23" font-weight="700">Hijacked</text>
+    <text x="437" y="295" fill="#fff" font-size="15">Legitimate agent</text>
+    <text x="437" y="320" fill="#d2d3f8" font-size="14">Redirected by an adversary</text>
+  </g>
+</svg>
 
-    A ~~~ W
-    R ~~~ H
-```
 **Autonomous:** An AI agent makes independent decisions within legitimate authority.
 
 **Weaponized:** An adversary deliberately directs AI capabilities toward unauthorized actions.

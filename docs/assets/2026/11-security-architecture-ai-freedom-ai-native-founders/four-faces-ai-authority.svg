@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 385" width="800" height="385" role="img" aria-label="Four faces of AI authority">
+  <rect width="800" height="385" rx="18" fill="#101827"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="400" y="42" fill="#fff" font-size="26" font-weight="700" text-anchor="middle">Four Faces of AI Authority</text>
+    <text x="400" y="67" fill="#aab9cb" font-size="14" text-anchor="middle">Who controls the agent, and what authority does it possess?</text>
+    <rect x="30" y="96" width="355" height="114" rx="12" fill="#153c31" stroke="#4fb98b" stroke-width="2"/>
+    <text x="52" y="132" fill="#82e4b2" font-size="23" font-weight="700">Autonomous</text>
+    <text x="52" y="161" fill="#fff" font-size="15">Independent action</text>
+    <text x="52" y="186" fill="#c1d5cd" font-size="14">Within legitimate authority</text>
+    <rect x="415" y="96" width="355" height="114" rx="12" fill="#493222" stroke="#efad63" stroke-width="2"/>
+    <text x="437" y="132" fill="#ffd09c" font-size="23" font-weight="700">Weaponized</text>
+    <text x="437" y="161" fill="#fff" font-size="15">Adversary-directed action</text>
+    <text x="437" y="186" fill="#f6dac0" font-size="14">Against unauthorized targets</text>
+    <rect x="30" y="230" width="355" height="114" rx="12" fill="#47252a" stroke="#e87782" stroke-width="2"/>
+    <text x="52" y="266" fill="#ff9da5" font-size="23" font-weight="700">Runaway</text>
+    <text x="52" y="295" fill="#fff" font-size="15">Legitimate initial objective</text>
+    <text x="52" y="320" fill="#f5c7cc" font-size="14">Unauthorized methods or scope</text>
+    <rect x="415" y="230" width="355" height="114" rx="12" fill="#292e52" stroke="#9b9df0" stroke-width="2"/>
+    <text x="437" y="266" fill="#b8baff" font-size="23" font-weight="700">Hijacked</text>
+    <text x="437" y="295" fill="#fff" font-size="15">Legitimate agent</text>
+    <text x="437" y="320" fill="#d2d3f8" font-size="14">Redirected by an adversary</text>
+  </g>
+</svg>

@@ -6,7 +6,7 @@ const markdownImages = (text: string): string[] => {
   const matches: string[] = [];
   let match: RegExpExecArray | null;
   while ((match = regex.exec(text)) !== null) {
-    matches.push(match[1]!.trim());
+    matches.push(match[1]!.trim().replace(/\s+(?:"[^"]*"|'[^']*')$/, ""));
   }
   return matches;
 };

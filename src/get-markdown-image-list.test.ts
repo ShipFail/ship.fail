@@ -5,6 +5,7 @@ import { getIframeIncludeSrcList, getMarkdownImageList } from "./get-markdown-im
 Deno.test("getMarkdownImageList collects markdown and html image sources", async () => {
   const temp = await Deno.makeTempFile({ suffix: ".md" });
   const content = `![one](/assets/img1.webp)
+![one with title](/assets/img3.webp "Image title")
 <img src="/assets/img2.png" />
 \`\`\`
 ![skip](/ignore.webp)
@@ -15,7 +16,7 @@ Deno.test("getMarkdownImageList collects markdown and html image sources", async
   await Deno.writeTextFile(temp, content);
 
   const images = getMarkdownImageList(temp).sort();
-  assertEquals(images, ["/assets/img1.webp", "/assets/img2.png"].sort());
+  assertEquals(images, ["/assets/img1.webp", "/assets/img2.png", "/assets/img3.webp"].sort());
 
   const includes = getIframeIncludeSrcList(temp);
   assertEquals(includes, ["https://example.com", "https://youtube.com/watch?v=abc"]);
